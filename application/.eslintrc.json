@@ -1,0 +1,64 @@
+{
+    "parser": "@babel/eslint-parser",
+    "parserOptions" : {
+      "requireConfigFile": false,
+      "babelOptions": {
+        "presets": ["@babel/preset-react"]
+     }
+    },
+    "extends": [
+      "standard",
+      "plugin:storybook/recommended"
+    ],
+    "plugins": [
+      "babel",
+      "react",
+      "promise"
+    ],
+    "env": {
+      "browser" : true,
+      "jest"    : true
+    },
+    "globals": {
+      "__DEV__"      : false,
+      "__TEST__"     : false,
+      "__PROD__"     : false,
+      "__COVERAGE__" : false,
+      "__FEATHERS__" : false,
+      "__ELASTIC_API_URL__" : false,
+      "__ELASTIC_X_KEY__" : false,
+      "__LEARN_URL__" : false,
+      "__USERACCT__" : false,
+      "__USERACCT_API_KEY__" : false,
+      "__SUBSCRIPTIONS__" : false,
+      "__ZEROBOUNCE_URL__" : false,
+      "__SUBSCRIPTIONS_API_KEY__" : false,
+      "__LIVESTREAM_URL__" : false,
+      "__MOBILE_APP_QUERY_PARAM__" : false,
+      "__CLIENT__" : false,
+      "__SERVER__" : false,
+      "dataLayer" : false,
+      "__GA_TRACKING__": false,
+      "__AMPLITUDE_API_KEY__": false,
+      "__CANONICAL_DOMAIN__": false,
+      "__ROUTE_FAILURE_STATUS_MSG__": false,
+      "__FIREBASE_API_KEY__": false,
+      "__FIREBASE_AUTH_DOMAIN__": false,
+      "__FIREBASE_DATABASE_URL__": false,
+      "__FIREBASE_PROJECT_ID__": false,
+      "__FIREBASE_STORAGE_BUCKET__": false,
+      "__FIREBASE_MESSAGING_SENDER_ID__": false,
+      "__FIREBASE_APP_ID__": false
+    },
+    "rules": {
+      "key-spacing"          : 0,
+      "jsx-quotes"           : [2, "prefer-single"],
+      "max-len"              : [2, 120, 2, { "ignoreStrings": true }],
+      "object-curly-spacing" : [2, "always"],
+      "camelcase"            : ["error", { "allow": ["UNSAFE_componentWillMount", "UNSAFE_componentWillReceiveProps", "stream_live"] }],
+      "react/jsx-uses-react" : "error",   
+      "react/jsx-uses-vars"  : "error",
+      "quote-props": 0,
+      "object-shorthand": 0
+  }
+}
