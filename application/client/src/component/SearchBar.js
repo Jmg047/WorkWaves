@@ -30,6 +30,7 @@ function SearchBar({ onSearch }) {
             console.error('Error fetching data:', error);
           });
       } else {
+        //khasdbfas
         // Clear search results if the input is empty
         setSearchResults([]);
       }
