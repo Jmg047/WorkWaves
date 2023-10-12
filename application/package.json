@@ -8,7 +8,7 @@
     "lint": "./node_modules/.bin/eslint --config .eslintrc.json",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
-    "start": "node server/server.js"
+    "start": "concurrently \"node server/server.js\" \"node api/api-server.js\""
   },
   "repository": "git+https://github.com/Jmg047/CSC648-demo-team03.git",
   "author": "Jmg047 <90755835+Jmg047@users.noreply.github.com>",
@@ -20,6 +20,7 @@
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "babel-eslint": "^10.1.0",
+    "concurrently": "^8.2.1",
     "cors": "^2.8.5",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-react": "^13.0.0",
