@@ -29,7 +29,7 @@ app.get('/workers', async (req, res) => {
     }
   })
 
-  app.get('/workers/:id', async (req, res) => {
+  app.get('/get-workers/', async (req, res) => {
     try {
       const client = new MongoClient(mongoURI)
       await client.connect()

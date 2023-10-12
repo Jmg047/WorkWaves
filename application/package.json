@@ -1,8 +1,8 @@
 {
-  "name": "csc648-01-fall23-team03",
+  "name": "demo_648team03",
   "version": "1.0.0",
   "description": "CSC648 group project",
-  "main": "server/server.js",
+  "main": "./server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/.bin/eslint --config .eslintrc.json",
@@ -10,20 +10,20 @@
     "watch": "webpack --watch --config webpack.config.js",
     "start": "node server/server.js"
   },
-  "repository": "git+https://github.com/CSC-648-SFSU/csc648-01-fall23-team03.git",
+  "repository": "git+https://github.com/Jmg047/CSC648-demo-team03.git",
   "author": "Jmg047 <90755835+Jmg047@users.noreply.github.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CSC-648-SFSU/csc648-01-fall23-team03/issues"
+    "url": "https://github.com/Jmg047/CSC648-demo-team03/issues"
   },
-  "homepage": "https://github.com/CSC-648-SFSU/csc648-01-fall23-team03#readme",
+  "homepage": "https://github.com/Jmg047/CSC648-demo-team03#readme",
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "babel-eslint": "^10.1.0",
     "cors": "^2.8.5",
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-react": "^13.0.0",
-    "eslint-plugin-storybook": "^0.6.13",
+    "eslint-plugin-storybook": "^0.6.15",
     "express": "^4.18.2",
     "mongodb": "^6.1.0",
     "mongosh": "^2.0.1",
