@@ -13,7 +13,7 @@ function SearchBar ({ onSearch }) {
       // Only perform a search if the input is not empty
       if (query) {
         console.log(query)
-        fetch(`http://localhost:2000/get-workers/?FirstName=${query}`)
+        fetch(`https://oyster-app-yztvt.ondigitalocean.app:2000/get-workers/?FirstName=${query}`)
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok')
