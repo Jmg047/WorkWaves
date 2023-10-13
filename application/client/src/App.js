@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SearchBar from '../src/component/SearchBar.js'
-import GigList from './GigList' // import the GigList component
+import GigList from './component/GigList.js' // import the GigList component
 // * file modified by sid
 const App = () => {
   const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
