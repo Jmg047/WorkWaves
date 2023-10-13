@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const port = 2000
 
-app.use(cors())
+app.use(cors()) 
 app.use(express.json()) // JSON parser
 
 const mongoURI = 'mongodb+srv://jmg52311:6SADdy370zh14NUJ@cluster0.hhxszoa.mongodb.net/demo'
