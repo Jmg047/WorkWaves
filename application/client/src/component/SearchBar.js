@@ -15,11 +15,11 @@ function SearchBar ({ onSearch }) {
         console.log(query)
 
         const requestOptions = {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json'
-            }
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
           }
+        }
 
         fetch(`https://oyster-app-yztvt.ondigitalocean.app:2000/get-workers/?FirstName=${query}`, requestOptions)
           .then(response => {
