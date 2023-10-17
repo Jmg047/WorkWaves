@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SearchBar from './component/ui/SearchBar.js'
-import GigList from './component/ui/GigList.js' // import the GigList component
+import Homepage from './pages/Homepage/Homepage.js' // import the GigList component
 // * file modified by sid
 const App = () => {
   const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
@@ -21,8 +21,8 @@ const App = () => {
       <button type='submit' onClick={() => handleSearch('worker')}>find a worker</button>
       <SearchBar onSearch={handleSearch} />
 
-       {/* Use the GigList component to display gig or worker data based on the query */}
-       <GigList query={query} />
+       {/* Use the Homepage component to display gig or worker data based on the query */}
+       <Homepage query={query} />
     </div>
   )
 }
