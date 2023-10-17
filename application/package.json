@@ -8,7 +8,7 @@
     "lint": "./node_modules/.bin/eslint --config .eslintrc.json",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
-    "start": "concurrently \"node server/server.js\" \"node api/api-server.js\""
+    "start": "concurrently \"node backend/server/server.js\" \"node backend/api/api-server.js\""
   },
   "repository": "git+https://github.com/Jmg047/CSC648-demo-team03.git",
   "author": "Jmg047 <90755835+Jmg047@users.noreply.github.com>",
