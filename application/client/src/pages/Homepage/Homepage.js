@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-// * file modified by sidney
+// * file modified by sidney // yes
 const GigList = ({ query }) => {
   const [data, setData] = useState([])
   const [dataType, setDataType] = useState('gigs') // Default to gigs
