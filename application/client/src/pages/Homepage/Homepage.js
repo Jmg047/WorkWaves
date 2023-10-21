@@ -7,7 +7,7 @@ const GigList = ({ query }) => {
 
   useEffect(() => {
     // Determine the data type and fetch data accordingly
-    const apiUrl = dataType === 'gigs' ? 'https://oyster-app-yztvt.ondigitalocean.app:2000/gigs' : 'https://oyster-app-yztvt.ondigitalocean.app:2000/workers'
+    const apiUrl = dataType === 'gigs' ? 'http://localhost:2000/gigs' : 'http://localhost:2000/workers'
 
     const requestOptions = {
       method: 'GET',

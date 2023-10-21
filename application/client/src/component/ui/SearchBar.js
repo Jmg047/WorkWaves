@@ -21,11 +21,8 @@ function SearchBar ({ onSearch }) {
           }
         }
 
-        fetch(
-          `https://oyster-app-yztvt.ondigitalocean.app:2000/get-workers/?FirstName=${query}`,
-          requestOptions
-        )
-          .then((response) => {
+        fetch(`http://localhost:2000/get-workers/?FirstName=${query}`, requestOptions)
+          .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok')
             }
