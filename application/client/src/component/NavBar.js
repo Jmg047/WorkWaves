@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBar from './SearchBar'
+import SearchBar from './ui/SearchBar'
 // import Homepage from '../../Homepage/SearchBar';
 // import SearchBar from './ui/SearchBar';
 // import Homepage from 'component/pages/Homepage/SearchBar';
