@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 // import NavBar from 'component/ui/Navbar'
+
 import NavBar from './component/ui/Navbar'
-// * file modified by sid
+import './component/ui/Navbar.css'
+
 const App = () => {
   const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
 

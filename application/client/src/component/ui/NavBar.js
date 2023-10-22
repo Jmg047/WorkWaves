@@ -4,6 +4,7 @@ import SearchBar from '../ui/SearchBar'
 // import SearchBar from './ui/SearchBar';
 // import Homepage from 'component/pages/Homepage/SearchBar';
 
+
 class NavBar extends React.Component {
   constructor (props) {
     super(props)
@@ -20,7 +21,7 @@ class NavBar extends React.Component {
     const { query } = this.state
 
     return (
-      <div>
+      <div className="navbar-container">
         <h1>Work Waves</h1>
         <button type='button' onClick={() => this.handleSearch('job')}>
           find a job

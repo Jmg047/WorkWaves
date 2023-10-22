@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 
-// * file modified by sidney // yes
+
 const GigList = ({ query }) => {
   const [data, setData] = useState([])
   const [dataType, setDataType] = useState('gigs') // Default to gigs
 
   useEffect(() => {
     // Determine the data type and fetch data accordingly
-    const apiUrl = dataType === 'gigs' ? 'http://localhost:2000/gigs' : 'http://localhost:2000/workers'
+    const apiUrl = dataType === 'gigs' ? 'http://localhost:2000/get-gigs' : 'http://localhost:2000/get-workers'
 
     const requestOptions = {
       method: 'GET',
