@@ -5,20 +5,11 @@ import SearchBar from './SearchBar'
 // import Homepage from 'component/pages/Homepage/SearchBar';
 
 class NavBar extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      query: '' // Initialize the query state
-    }
-  }
-
   handleSearch = (query) => {
     this.setState({ query })
   }
 
   render () {
-    const { query } = this.state
-
     return (
       <div>
         <h1>Work Waves</h1>

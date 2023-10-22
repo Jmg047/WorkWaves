@@ -1,13 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import NavBar from 'component/ui/Navbar'
 import NavBar from './component/ui/Navbar'
 // * file modified by sid
 const App = () => {
-  const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
-
-  const handleSearch = (newQuery) => {
-    setQuery(newQuery) // Set the query when a button is clicked
-  }
+  // const setQuery = useState('gigs') // Initialize query state with 'gigs'
 
   // const App = () => {
   //   const handleSearch = (query) => {
