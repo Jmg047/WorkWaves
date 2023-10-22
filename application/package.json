@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Jmg047/CSC648-demo-team03#readme",
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.22.5",
+    "axios": "^1.5.1",
     "babel-eslint": "^10.1.0",
     "concurrently": "^8.2.1",
     "cors": "^2.8.5",
