@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import axios from 'axios'
 function SearchBar ({ onSearch }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
@@ -10,37 +10,19 @@ function SearchBar ({ onSearch }) {
 
   useEffect(() => {
     const delay = setTimeout(() => {
-      // Only perform a search if the input is not empty
       if (query) {
-        console.log(query)
-
-        const requestOptions = {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-
-        fetch(`https://oyster-app-yztvt.ondigitalocean.app:2000/get-workers/?FirstName=${query}`, requestOptions)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok')
-            }
-            return response.json()
+        axios.get(`http://localhost:2000/get-workers/?FirstName=${query}`)
+          .then((response) => {
+            setSearchResults(response.data)
           })
-          .then(data => {
-            // Update the search results
-            setSearchResults(data)
-          })
-          .catch(error => {
-            if (error.message === 'Network response was not ok') {
-              console.error('Server error: Something went wrong on the server.')
+          .catch((error) => {
+            if (error.response) {
+              console.error(`Server error: ${error.response.data}`)
             } else {
               console.error('Network error: Unable to fetch data.')
             }
           })
       } else {
-        // Clear search results if the input is empty
         setSearchResults([])
       }
     }, 100)
@@ -58,10 +40,11 @@ function SearchBar ({ onSearch }) {
       />
       <button onClick={() => onSearch(query)}>Search</button>
 
-      {/* Display search results */}
       <ul>
-        {searchResults.map(result => (
-          <li key={result._id}>{result.FirstName} {result.LastName} {result.Location}</li>
+        {searchResults.map((result) => (
+          <li key={result._id}>
+            {result.FirstName} {result.LastName} {result.Location}
+          </li>
         ))}
       </ul>
     </div>
