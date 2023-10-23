@@ -35,13 +35,12 @@ body {
     display: flex;
     align-items: center;
     padding: .25rem;
-}
+} */
 
 .nav li.hover {
     background-color: #777;
     
 }
 .nav li.active {
-    background-color: #555;
-    
+    background-color: #555; 
 }

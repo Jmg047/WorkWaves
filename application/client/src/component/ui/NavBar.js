@@ -4,25 +4,23 @@ import SearchBar from '../ui/SearchBar'
 // import SearchBar from './ui/SearchBar';
 // import Homepage from 'component/pages/Homepage/SearchBar';
 
-export default function NavBar(){ 
+export default function NavBar () {
   return (
-  <nav className="nav">
-    <a href="/" className="site-title">
+  <nav className='nav'>
+    <a href='/' className='site-title'>
       Work Waves
       </a>
     <ul>
-      <li className="active">
-        <a href="/find a job">Find a job</a>
+      <li className='active'>
+        <a href='/find a job'>Find a job</a>
       </li>
       <li>
-        <a href="/find a worker">Find a worker</a>
+        <a href='/find a worker'>Find a worker</a>
       </li>
     </ul>
   </nav>
-)
+  )
 }
-
-
 
 // class NavBar extends React.Component {
 //   constructor (props) {
