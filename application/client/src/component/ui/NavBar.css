@@ -44,3 +44,8 @@ body {
 .nav li.active {
     background-color: #555; 
 }
+
+.searchbar-container {
+    background-color: blue;
+    padding: .75rem;
+}

@@ -2,7 +2,11 @@ import React from 'react'
 import SearchBar from '../ui/SearchBar'
 // import Homepage from '../../Homepage/SearchBar';
 // import SearchBar from './ui/SearchBar';
-// import Homepage from 'component/pages/Homepage/SearchBar';
+// import Homepage from 'component/pages/Homepage/SearchBar'
+
+// handleSearch = (query) => {
+//   this.setState({ query })
+// }
 
 export default function NavBar () {
   return (
@@ -17,6 +21,9 @@ export default function NavBar () {
       <li>
         <a href='/find a worker'>Find a worker</a>
       </li>
+     <li className='searchbar-container'>
+     <SearchBar />
+     </li>
     </ul>
   </nav>
   )

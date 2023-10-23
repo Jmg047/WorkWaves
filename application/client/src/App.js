@@ -2,14 +2,15 @@ import React, { useState } from 'react'
 // import NavBar from 'component/ui/Navbar'
 
 // * IMPORT EVERY COMPONENTS HERE
-import NavBar from './component/ui/Navbar' // no error
+import NavBar from './component/ui/NavBar' // no error
+import SearchBar from './component/ui/SearchBar'
 
 const App = () => {
-  const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
+  // const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
 
-  const handleSearch = (newQuery) => {
-    setQuery(newQuery) // Set the query when a button is clicked
-  }
+  // const handleSearch = (newQuery) => {
+  //   setQuery(newQuery) // Set the query when a button is clicked
+  // }
 
   // const App = () => {
   //   const handleSearch = (query) => {
