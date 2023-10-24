@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 // * IMPORT EVERY COMPONENTS HERE
 import NavBar from './component/ui/NavBar' // no error
-import SearchBar from './component/ui/SearchBar'
+import CategorySideBar from './component/ui/CategorySideBar'
 
 const App = () => {
   // const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
@@ -18,8 +18,9 @@ const App = () => {
   //   }
 
   return (
-    <div>
+    <div className='App-container'>
       <NavBar />
+      <CategorySideBar />
     </div>
   )
 }
