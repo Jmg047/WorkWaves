@@ -3,26 +3,50 @@ import React from 'react'
 export const CategorySideBarData = [
   {
     title: 'kid',
-    link: '/home',
+    link: '/kid',
   },
   {
     title: 'pet',
-    link: '/home',
+    link: '/pet',
   },
   {
     title: 'security',
-    link: '/home',
+    link: '/security',
   },
   {
     title: 'housing',
-    link: '/home',
+    link: '/housing',
   },
   {
     title: 'books',
-    link: '/home',
+    link: '/books',
   },
   {
     title: 'clothes',
-    link: '/home',
+    link: '/clothes',
+  },
+  {
+    title: 'lessons',
+    link: '/lessons',
+  },
+  {
+    title: 'car',
+    link: '/car',
+  },
+  {
+    title: 'collectibles',
+    link: '/collectibles',
+  },
+  {
+    title: 'computer',
+    link: '/computer',
+  },
+  {
+    title: 'retail',
+    link: '/retail',
+  },
+  {
+    title: 'bikes',
+    link: '/bikes',
   },
 ];
