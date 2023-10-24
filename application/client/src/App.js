@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 // import NavBar from 'component/ui/Navbar'
 
 // * IMPORT EVERY COMPONENTS HERE
 import NavBar from './component/ui/NavBar' // no error
-import SearchBar from './component/ui/SearchBar'
 
 const App = () => {
   // const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
