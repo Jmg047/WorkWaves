@@ -1,5 +1,7 @@
 import React from 'react'
 import { CategorySideBarData } from '../ui/CategorySideBarData'
+// TODO : ? use REACT ROUTER to handle the route of my link/button
+
 
 function CategorySideBar () {
   return (

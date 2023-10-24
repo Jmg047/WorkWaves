@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from '../ui/SearchBar'
+// TODO : ? use REACT ROUTER to handle the route of my link/button
 // import Homepage from '../../Homepage/SearchBar';
 // import SearchBar from './ui/SearchBar';
 // import Homepage from 'component/pages/Homepage/SearchBar'

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import NavBar from 'component/ui/Navbar'
+// TODO : ? use REACT ROUTER to handle the route of my link/button
 
 // * IMPORT EVERY COMPONENTS HERE
 import NavBar from './component/ui/NavBar' // no error
