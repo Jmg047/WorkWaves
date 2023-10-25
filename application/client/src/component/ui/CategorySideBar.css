@@ -1,0 +1,34 @@
+.SideBar {
+   height: 100%;
+   width: 250px;
+   background-color: blue;
+}
+
+.SideBar-list {
+height: auto;
+padding: 0;
+background-color: aqua;
+}
+
+.SideBar-list .category-row {
+width: 100%;
+height: 50px;
+border: 1px solid black;
+list-style-type: none;
+margin: 0%;
+display: flex;
+flex-direction: row;
+color: white;
+justify-content: center;
+align-items: center;
+}
+
+.SideBar-list .category-row:hover{
+   cursor: pointer;
+   background-color: #293846;
+}
+
+.SideBar-list #active{
+   cursor: pointer;
+   background-color: #293846;
+}
