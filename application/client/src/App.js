@@ -19,11 +19,15 @@ const App = () => {
   //     console.log(Searching for: ${query})
   //   }
 
+  // TODO: make a third empty container after Feed
+  // TODO: apply CSS flexbox to position them properly as UI 
   return (
     <div className={AppCSS.App}>
       <NavBar />
+      <div className={AppCSS.container}>
       <CategorySideBar />
       <Feed />
+      </div>
     </div>
   )
 }
