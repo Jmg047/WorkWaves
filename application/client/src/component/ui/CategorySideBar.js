@@ -2,7 +2,6 @@ import React from 'react'
 import { CategorySideBarData } from '../ui/CategorySideBarData'
 // TODO : ? use REACT ROUTER to handle the route of my link/button
 
-
 function CategorySideBar () {
   return (
     <div className='SideBar'>Category
@@ -11,10 +10,10 @@ function CategorySideBar () {
           return (
           <li key={key}
           className='category-row'
-          id={window.location.pathname == val.link ? 'active' : ''}
-           onClick={() => { 
-            window.location.pathname = val.link 
-            }}
+          id={window.location.pathname === val.link ? 'active' : ''}
+           onClick={() => {
+             window.location.pathname = val.link
+           }}
             >
            {' '}
            <div>

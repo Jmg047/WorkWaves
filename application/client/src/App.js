@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 // TODO : ? use REACT ROUTER to handle the route of my link/button
 
 // * IMPORT EVERY COMPONENTS HERE
