@@ -1,0 +1,12 @@
+.feed {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: transparent; /* Optionally, reset the background */
+  }
+
+.grid {
+    height: 100vh; /* 100% viewport height */
+    width: 500px;
+    background-color: green;
+}
