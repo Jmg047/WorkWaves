@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
-import SearchBar from '../src/component/SearchBar.js'
-import GigList from './component/GigList.js' // import the GigList component
-// * file modified by sid
-const App = () => {
-  const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
+import React from 'react'
+// TODO : ? use REACT ROUTER to handle the route of my link/button
 
-  const handleSearch = (newQuery) => {
-    setQuery(newQuery) // Set the query when a button is clicked
-  }
+// * IMPORT EVERY COMPONENTS HERE
+import NavBar from './component/ui/NavBar' // no error
+import CategorySideBar from './component/ui/CategorySideBar'
+
+const App = () => {
+  // const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
+
+  // const handleSearch = (newQuery) => {
+  //   setQuery(newQuery) // Set the query when a button is clicked
+  // }
 
   // const App = () => {
   //   const handleSearch = (query) => {
@@ -15,14 +18,9 @@ const App = () => {
   //   }
 
   return (
-    <div>
-      <h1>Work Waves</h1>
-      <button type='submit' onClick={() => handleSearch('job')}>find a job</button>
-      <button type='submit' onClick={() => handleSearch('worker')}>find a worker</button>
-      <SearchBar onSearch={handleSearch} />
-
-       {/* Use the GigList component to display gig or worker data based on the query */}
-       <GigList query={query} />
+    <div className='App-container'>
+      <NavBar />
+      <CategorySideBar />
     </div>
   )
 }
