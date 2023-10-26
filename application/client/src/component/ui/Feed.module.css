@@ -1,12 +1,11 @@
 .feed {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    background-color: yellow; /* Optionally, reset the background */
+    width: 750px;
+    background-color: orange; /* Optionally, reset the background */
   }
 
 .grid {
-    width: 500px;
+    width: 750px;
     height: 100vh; /* 100% viewport height */
     background-color: green;
 }

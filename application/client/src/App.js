@@ -25,8 +25,9 @@ const App = () => {
     <div className={AppCSS.App}>
       <NavBar />
       <div className={AppCSS.container}>
-      <CategorySideBar />
-      <Feed />
+        <div className={AppCSS.itemOne}><CategorySideBar /></div>
+        <div className={AppCSS.itemTwo}><Feed /></div>
+        <div className={AppCSS.itemThree}>Yessir</div>
       </div>
     </div>
   )

@@ -3,8 +3,8 @@ import FeedCSS from './Feed.module.css'
 
 function Feed () {
   return (
-    <div className={FeedCSS.feed}>
-        <div className={FeedCSS.grid}>Feed
+    <div className={FeedCSS.feed}> Feed Feed
+        <div className={FeedCSS.grid}>Feed Grid
             <div className='grid-item grid-item-1'></div>
             <div className='grid-item grid-item-2'></div>
             <div className='grid-item grid-item-3'></div>

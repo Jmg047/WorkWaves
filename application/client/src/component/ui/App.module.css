@@ -5,12 +5,21 @@ body {
 
 .App {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: red;
 }
 
 .container {
     display: flex;
-    justify-content: space-evenly;
+}
+
+
+.itemTwo {
+    flex-grow: 1;
+}
+
+.itemThree {
+    width: 300px;
+    background-color: yellow;
 }
 
