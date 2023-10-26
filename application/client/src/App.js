@@ -20,7 +20,7 @@ const App = () => {
   //   }
 
   // TODO: make a third empty container after Feed
-  // TODO: apply CSS flexbox to position them properly as UI 
+  // TODO: apply CSS flexbox to position them properly as UI
   return (
     <div className={AppCSS.App}>
       <NavBar />
