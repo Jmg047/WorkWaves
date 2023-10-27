@@ -51,6 +51,8 @@ a, a:visited {
 
 input[type="text"],
 input[type="password"],
+input[type="email"],
+input[type="tel"],
 button,
 textarea {
   font-family: 'Nunito', sans-serif;
