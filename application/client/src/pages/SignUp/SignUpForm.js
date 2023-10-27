@@ -57,9 +57,10 @@ const SignUpForm = () => {
     console.log(user, pwd)
     setSuccess(true)
     setUser('')
-    setPwd('')
+    setMatchPwd('')
     matchPwd('')
   }
+
   return (
     <>
             {success ? (
@@ -82,9 +83,10 @@ const SignUpForm = () => {
                 <input
                 type='text'
                 id='username'
-                ref={useRef}
+                ref={userRef}
                 autoComplete='off'
-                onChange={(e) = setUser = (e.target.value)}
+                onChange={(e) => setUser(e.target.value)}
+                value={user}
                 required
                 aria-invalid={validName ? 'false' : 'true'}
                 aria-describedby='uidnote'
@@ -107,6 +109,7 @@ const SignUpForm = () => {
                 type='password'
                 id='password'
                 onChange={(e) => setPwd(e.target.value)}
+                value={pwd}
                 required
                 aria-invalid = {validPwd ? 'false' : 'true'}
                 aria-describedby='pwdnote'
@@ -125,12 +128,13 @@ const SignUpForm = () => {
                 </p>
 
                 <label htmlFor='password'>
-                    password:
+                    confirm password:
                 </label>
                 <input
                 type='password'
                 id='confirm_pwd'
                 onChange={(e) => setMatchPwd(e.target.value)}
+                value={matchPwd}
                 required
                 aria-invalid = {validMatch ? 'false' : 'true'}
                 aria-describedby='confirmnote'
@@ -141,7 +145,7 @@ const SignUpForm = () => {
                     must match the first password. <br />
                 </p>
 
-                <button disabled={!!(!validName || !validPwd || !validMatch)}>
+                <button disabled={!validName || !validPwd || !validMatch ? true : false}>
                     Sign Up
                 </button>
                 <p>
