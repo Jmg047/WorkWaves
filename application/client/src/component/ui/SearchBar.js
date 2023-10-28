@@ -12,7 +12,7 @@ function SearchBar ({ onSearch }) {
   useEffect(() => {
     const delay = setTimeout(() => {
       if (query) {
-        axios.get(`http://localhost:2000/get-workers/?FirstName=${query}`)
+        axios.get(`https://workwaves-prototype-w9ikm.ondigitalocean.app/api/get-workers/?FirstName=${query}`)
           .then((response) => {
             setSearchResults(response.data)
           })
