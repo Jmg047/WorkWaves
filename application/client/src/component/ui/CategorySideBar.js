@@ -1,5 +1,5 @@
 import React from 'react'
-import { CategorySideBarData } from '../ui/CategorySideBarData'
+import { CategorySideBarData } from './CategorySideBarData'
 import CategorySideBarCSS from './CategorySideBar.module.css'
 // TODO : ? use REACT ROUTER to handle the route of my link/button
 

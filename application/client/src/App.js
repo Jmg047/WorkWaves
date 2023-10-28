@@ -1,6 +1,6 @@
 import React from 'react'
 // TODO : ? use REACT ROUTER to handle the route of my link/button
-import AppCSS from './component/ui/App.module.css'
+import AppCSS from './App.module.css'
 
 // * IMPORT EVERY COMPONENTS HERE
 import NavBar from './component/ui/NavBar' // no error
