@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 // * COMPONENTS IMPORT
 import SearchBar from '../ui/SearchBar'
 
-
 export default function NavBar () {
   return (
   <nav className='nav'>

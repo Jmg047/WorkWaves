@@ -12,7 +12,7 @@ import HomeCSS from './Home.module.css'
 function
 Home () {
   return (
-  <div className={HomeCSS.container}> 
+  <div className={HomeCSS.container}>
       <div className={HomeCSS.itemOne}><CategorySideBar /></div>
       <div className={HomeCSS.itemTwo}><Feed /></div>
       <div className={HomeCSS.itemThree}></div>

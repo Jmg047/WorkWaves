@@ -1,16 +1,4 @@
-
-
 .container {
     background-color: red;
     display: flex;
 }
-
-/* .itemTwo {
-    flex-grow: 1;
-    background-color: bisque;
-}
-
-.itemThree {
-    width: 300px;
-    background-color: yellow;
-} */
