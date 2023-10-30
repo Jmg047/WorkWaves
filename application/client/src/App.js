@@ -1,5 +1,6 @@
 import React from 'react'
 import AppCSS from './App.module.css'
+import { Route, Routes } from 'react-router-dom'
 
 // * COMPONENTS IMPORTS
 import NavBar from './component/ui/NavBar'
@@ -21,6 +22,9 @@ const App = () => {
     <div className={AppCSS.App}>
       <NavBar />
       <div className={AppCSS.container}>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
         <div><Home /></div>
         {/* <div className={AppCSS.itemOne}><CategorySideBar /></div>
         <div className={AppCSS.itemTwo}><Feed /></div>

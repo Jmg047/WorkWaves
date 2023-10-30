@@ -1,23 +1,21 @@
 import React from 'react'
-import SearchBar from '../ui/SearchBar'
-// TODO : ? use REACT ROUTER to handle the route of my link/button
-// import Homepage from '../../Homepage/SearchBar';
-// import SearchBar from './ui/SearchBar';
-// import Homepage from 'component/pages/Homepage/SearchBar'
+import { Link } from 'react-router-dom'
+// TODO: add more routes when the redirection pages are created
+// TODO: routes for find a worker
 
-// handleSearch = (query) => {
-//   this.setState({ query })
-// }
+// * COMPONENTS IMPORT
+import SearchBar from '../ui/SearchBar'
+
 
 export default function NavBar () {
   return (
   <nav className='nav'>
-    <a href='/' className='site-title'>
+    <Link to='/' className='site-title'>
       Work Waves
-      </a>
+      </Link>
     <ul>
       <li className='active'>
-        <a href='/find a job'>Find a job</a>
+        <Link href='/'>Find a job</Link>
       </li>
       <li>
         <a href='/find a worker'>Find a worker</a>

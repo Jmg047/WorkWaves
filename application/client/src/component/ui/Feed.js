@@ -9,7 +9,7 @@ function Feed () {
             <div className={`${FeedCSS.item} item-1`}>
                 <img src={bartenderJob} alt='Job' width='250' height='150' />
                   Looking for a Bartender
-                  <div className={FeedCSS.JobButtonContainer}>
+                  <div className={FeedCSS.jobButtonContainer}>
                     <a href='/JobDetails'>Details</a>
                     <a href='/JobRequested'>Send job request</a>
                   </div>
@@ -18,7 +18,7 @@ function Feed () {
             <div className={`${FeedCSS.item} item-2`}>
               <img src={bartenderJob} alt='Job' width='250' height='150' />
                 Looking for a Bartender
-                <div className={FeedCSS.JobButtonContainer}>
+                <div className={FeedCSS.jobButtonContainer}>
                   <a href='/JobDetails'>Details</a>
                   <a href='/JobRequested'>Send job request</a>
                 </div>
@@ -27,7 +27,7 @@ function Feed () {
             <div className={`${FeedCSS.item} item-3`}>
               <img src={bartenderJob} alt='Job' width='250' height='150' />
                 Looking for a Bartender
-                <div className={FeedCSS.JobButtonContainer}>
+                <div className={FeedCSS.jobButtonContainer}>
                   <a href='/JobDetails'>Details</a>
                   <a href='/JobRequested'>Send job request</a>
                 </div>
@@ -36,7 +36,7 @@ function Feed () {
             <div className={`${FeedCSS.item} item-3`}>
               <img src={bartenderJob} alt='Job' width='250' height='150' />
                 Looking for a Bartender
-                <div className={FeedCSS.JobButtonContainer}>
+                <div className={FeedCSS.jobButtonContainer}>
                   <a href='/JobDetails'>Details</a>
                   <a href='/JobRequested'>Send job request</a>
                 </div>
