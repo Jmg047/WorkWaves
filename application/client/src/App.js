@@ -1,11 +1,9 @@
 import React from 'react'
-// TODO : ? use REACT ROUTER to handle the route of my link/button
 import AppCSS from './App.module.css'
 
-// * IMPORT EVERY COMPONENTS HERE
-import NavBar from './component/ui/NavBar' // no error
-import CategorySideBar from './component/ui/CategorySideBar'
-import Feed from './component/ui/Feed'
+// * COMPONENTS IMPORTS
+import NavBar from './component/ui/NavBar'
+import Home from './pages/Home/Home'
 
 const App = () => {
   // const [query, setQuery] = useState('gigs') // Initialize query state with 'gigs'
@@ -19,15 +17,14 @@ const App = () => {
   //     console.log(Searching for: ${query})
   //   }
 
-  // TODO: make a third empty container after Feed
-  // TODO: apply CSS flexbox to position them properly as UI
   return (
     <div className={AppCSS.App}>
       <NavBar />
       <div className={AppCSS.container}>
-        <div className={AppCSS.itemOne}><CategorySideBar /></div>
+        <div><Home /></div>
+        {/* <div className={AppCSS.itemOne}><CategorySideBar /></div>
         <div className={AppCSS.itemTwo}><Feed /></div>
-        <div className={AppCSS.itemThree}>Yessir</div>
+        <div className={AppCSS.itemThree}>Yessir</div> */}
       </div>
     </div>
   )
