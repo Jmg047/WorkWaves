@@ -48,16 +48,16 @@ body {
     display: flex;
     align-items: center;
     padding: .25rem;
-    font-size: 24px; /* Adjust the font size as needed */
+    font-size: 18px; /* Adjust the font size as needed */
   }
 
-/* .nav li.hover {
+  .nav li.hover {
     background-color: #777;
     
-} */
-.nav li.active {
+} 
+/* .nav li.active {
     background-color: #555; 
-}
+} */
 
 .searchbar-container {
     display: flex;

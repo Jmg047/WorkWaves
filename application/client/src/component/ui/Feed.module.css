@@ -2,7 +2,8 @@
   display: flex;
   flex-wrap: wrap; /* Allow posts to wrap to the next line */
   justify-content: space-between; /* Evenly distribute space between posts */
-  width: 750px;
+  width: 1134px;
+  height: 100%;
   background-color: orange;
   padding: 10px; /* Add padding to create space around posts */
   overflow: auto;
