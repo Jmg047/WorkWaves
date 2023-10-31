@@ -1,4 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
+// * CSS IMPORT
 import './LoginForm.css'
 
 const LoginForm = () => {
@@ -29,6 +32,7 @@ const LoginForm = () => {
 
   return (
         <>
+        <div className='LoginContainer'>
         {success ? (
             <section>
                 <h1> You are logged in</h1>
@@ -69,11 +73,13 @@ const LoginForm = () => {
                 Need an Account?<br />
                 <span className='line'>
                     {/* router link */}
-                    <a href='#'>Sign Up</a>
+                    <Link to='/signup'>Sign Up</Link>
                 </span>
             </p>
         </section>
         )}
+        </div>
+        
         </>
   )
 }
