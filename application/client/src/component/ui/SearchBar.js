@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
+// * CSS IMPORT
+import SearchBarCSS from './SearchBar.module.css'
+
 function SearchBar ({ onSearch }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
@@ -32,14 +35,15 @@ function SearchBar ({ onSearch }) {
   }, [query])
 
   return (
-    <div>
+    <div className={SearchBarCSS.searchContainer}>
       <input
         type='text'
         placeholder='Search...'
         value={query}
         onChange={handleInputChange}
+        className={SearchBarCSS.searchInput}
       />
-      <button onClick={() => onSearch(query)}>Search</button>
+      <button onClick={() => onSearch(query)} className={SearchBarCSS.searchButton}>Search</button>
 
       <ul>
         {searchResults.map((result) => (

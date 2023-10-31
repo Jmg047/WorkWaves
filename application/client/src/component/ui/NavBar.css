@@ -10,7 +10,7 @@ body {
     background-color: #333;
     color: white;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
@@ -18,6 +18,10 @@ body {
 
 .site-title {
     font-size: 2rem;
+    background-color: green;
+    margin: 25px;
+    color: white; /* Text color */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .nav ul {
@@ -35,17 +39,29 @@ body {
     display: flex;
     align-items: center;
     padding: .25rem;
-} */
+} 
 
-.nav li.hover {
+.nav ul li a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+    font-size: 24px; /* Adjust the font size as needed */
+  }
+
+/* .nav li.hover {
     background-color: #777;
     
-}
+} */
 .nav li.active {
     background-color: #555; 
 }
 
 .searchbar-container {
+    display: flex;
     background-color: blue;
-    padding: .75rem;
+    padding: .70rem;
+    width: 800px;
 }

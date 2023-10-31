@@ -14,7 +14,7 @@ export default function NavBar () {
       </Link>
     <ul>
       <li className='active'>
-        <Link href='/'>Find a job</Link>
+        <Link to='/'>Find a job</Link>
       </li>
       <li>
         <a href='/find a worker'>Find a worker</a>
