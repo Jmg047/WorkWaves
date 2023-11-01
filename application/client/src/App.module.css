@@ -8,7 +8,7 @@ body {
 .App {
     width: 100vw;
     min-height: 100vh; /* Ensure the minimum height of the element is the viewport height */
-    background-color: red;
+    /* background-color: red; */
 }
 
 .container {
@@ -16,16 +16,7 @@ body {
     min-height: 100vh; /* 50% of the parent (.App) element's height */
     padding: 5px;
     border: 5px solid black;
-    background-color: blueviolet;
+    background-color: rgb(107, 42, 168);
 }
 
-
-/* .itemTwo {
-    flex-grow: 1;
-}
-
-.itemThree {
-    width: 300px;
-    background-color: yellow;
-} */
 
