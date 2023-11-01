@@ -4,7 +4,6 @@ import { Route, Routes } from 'react-router-dom'
 
 // * COMPONENTS IMPORTS
 import NavBar from './component/ui/NavBar'
-import './component/ui/Navbar.css'
 import Home from './pages/Home/Home'
 import SignUpForm from './pages/SignUp/SignUpForm.js'
 import LoginForm from './pages/Login/LoginForm.js'

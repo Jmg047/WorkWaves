@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 // * CSS IMPORTS
 // import './component/ui/App.css'
-// import './component/ui/Navbar.css'
+import './component/ui/NavBar.css'
 // import './component/ui/CategorySideBar.css'
 // import './component/ui/Feed.css'
 
