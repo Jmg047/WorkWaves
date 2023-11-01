@@ -7,11 +7,9 @@ import axios from 'axios'
 // * CSS IMPORT
 import FeedCSS from './Feed.module.css'
 
-
 function Feed () {
   const [jobTitles, setJobTitles] = useState([])
-  const [selectedJob, setSelectedJob] = useState(null);
-
+  const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
     const apiUrl = 'http://localhost:2000/get-gigs'
@@ -28,15 +26,15 @@ function Feed () {
   }, [])
 
   const openJobDetails = (job) => {
-    setSelectedJob(job);
-  };
+    setSelectedJob(job)
+  }
 
   const closeJobDetails = () => {
-    setSelectedJob(null);
-  };
+    setSelectedJob(null)
+  }
 
   // use the slice method to limit the number of job titles to 4
-  const displayedJobTitles = jobTitles.slice(0, 4)
+  // const displayedJobTitles = jobTitles.slice(0, 4)
 
   return (
     <div className={FeedCSS.feed}>

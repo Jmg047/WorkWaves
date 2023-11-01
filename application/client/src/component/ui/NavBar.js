@@ -31,30 +31,3 @@ export default function NavBar () {
     </nav>
   )
 }
-
-{/*// import React from 'react'
-import { Link } from 'react-router-dom'
-// TODO: add more routes when the redirection pages are created
-// TODO: routes for find a worker
-
-// * COMPONENTS IMPORT
-import SearchBar from '../ui/SearchBar'
-
-export default function NavBar () {
-  return (
-  <nav className='nav'>
-    <Link to='/' className='site-title'>
-      Work Waves
-      </Link>
-    <ul>
-      <li className='active'>
-        <Link to='/'>Find a job</Link>
-      </li>
-      <li>
-        <a href='/find a worker'>Find a worker</a>
-      </li>
-     <li className='searchbar-container'>
-     <SearchBar />
-     </li>
-    </ul>
-  </nav> */}
