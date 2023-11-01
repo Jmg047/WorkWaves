@@ -4,6 +4,11 @@
    background-color: blue;
 }
 
+.Title {
+   display: flex;
+   justify-content: center;
+}
+
 .SideBarList {
 height: auto;
 padding: 0;
