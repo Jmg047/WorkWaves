@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 // * CSS IMPORTS
 import './SignUpForm.css'
@@ -68,17 +69,34 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    // check if the username, password, and email are valid
     const v1 = USER_REGEX.test(user)
     const v2 = PWD_REGEX.test(pwd)
     if (v1 || v2) {
       setErrMsg('invalid entry')
       return
     }
-    console.log(user, pwd)
-    setSuccess(true)
-    setUser('')
-    setMatchPwd('')
-    matchPwd('')
+    try {
+      console.log('Sending registration request...')
+      const response = await Axios.post('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/workers', {
+        username: user,
+        password: pwd,
+        email: email
+      })
+      // check the response for success or error message
+      if (response.status === 201) {
+        console.log('Registration successful')
+        // registration successful
+        setSuccess(true)
+      } else {
+        console.log('Registration failed')
+        // registration failed, display an error message
+        setErrMsg('Registration failed')
+      }
+    } catch (error) {
+      console.error('Error during registration:', error)
+      setErrMsg('Error during registration. Please try again.')
+    }
   }
 
   return (
@@ -150,7 +168,7 @@ const SignUpForm = () => {
               Please enter a valid email address.
             </p>
 
-            <label htmlFor='phone'>
+            {/* <label htmlFor='phone'>
               Phone Number:
             </label>
             <input
@@ -159,7 +177,7 @@ const SignUpForm = () => {
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
-            />
+            /> */}
 
             <label htmlFor='password'>
               password:
@@ -186,7 +204,7 @@ const SignUpForm = () => {
               <span aria-label='pecent'>%</span>
             </p>
 
-            <label htmlFor='password'>
+            {/* <label htmlFor='password'>
               confirm password:
             </label>
             <input
@@ -202,7 +220,7 @@ const SignUpForm = () => {
             />
             <p id='confirmnote' className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}>
               must match the first password. <br />
-            </p>
+            </p> */}
 
             <label>
               <input
