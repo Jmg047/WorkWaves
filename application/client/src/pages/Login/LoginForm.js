@@ -9,8 +9,8 @@ const LoginForm = () => {
   const userRef = useRef()
   const errRef = useRef()
 
-  const [user, setUser] = useState('')
-  const [pwd, setPwd] = useState('')
+  const [username, setUser] = useState('')
+  const [password, setPwd] = useState('')
   const [errMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false)
 
@@ -20,16 +20,18 @@ const LoginForm = () => {
 
   useEffect(() => {
     setErrMsg('')
-  }, [user, pwd])
+  }, [username, password])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
     try {
       console.log('Sending login request...')
-      const response = await Axios.get('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/workers', {
-        username: user,
-        password: pwd
+      const response = await Axios.post('https://workwaves-prototype-w9ikm.ondigitalocean.app/api/login', null, {
+        params: {
+          username: username,
+          password: password
+        }
       })
 
       // check the response for success or error messages
@@ -75,7 +77,7 @@ const LoginForm = () => {
                     ref={userRef}
                     autoComplete='off'
                     onChange={(e) => setUser(e.target.value)}
-                    value={user}
+                    value={username}
                     required
                 />
 
@@ -84,7 +86,7 @@ const LoginForm = () => {
                     type='password'
                     id='password'
                     onChange={(e) => setPwd(e.target.value)}
-                    value={pwd}
+                    value={password}
                     required
                 />
                 <button>Sign In</button>
