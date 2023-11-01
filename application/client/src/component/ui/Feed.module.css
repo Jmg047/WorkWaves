@@ -1,18 +1,21 @@
 .feed {
   display: flex;
-  flex-wrap: wrap; /* Allow posts to wrap to the next line */
-  justify-content: space-between; /* Evenly distribute space between posts */
-  width: 750px;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  width: 1150px;
+  padding-left: 800px;
   background-color: orange;
-  padding: 10px; /* Add padding to create space around posts */
+  padding: 10px; 
   overflow: auto;
 }
 
 .post {
-  width: calc(50% - 10px); /* Calculate 50% of the container width with spacing */
+  width: calc(50% - 20px); /* Calculate 50% of the container width with spacing */
   height: auto; /* Remove fixed height to allow posts to adjust their height based on content */
   margin-bottom: 20px; /* Add margin to create space around and between posts */
   padding: 10px; /* Add padding to create space inside each post */
+  display: flex;
+  justify-content: center;
 }
 
 .item {
@@ -35,4 +38,17 @@
   align-items: center;
   background-color: aqua;
   height: 25%;
+}
+
+.JobButton {
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
 }
