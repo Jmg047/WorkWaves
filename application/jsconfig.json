@@ -1,0 +1,6 @@
+{
+"compilerOptions": {    
+    "baseUrl":"client",
+},
+"include": ["client"]
+}

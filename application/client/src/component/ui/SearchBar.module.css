@@ -1,0 +1,14 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  width: 800px;
+}
+
+.searchInput {
+  width: 100%;
+}
+
+.searchButton {
+  margin-left: 10px;
+  margin-bottom: 12px;
+}
