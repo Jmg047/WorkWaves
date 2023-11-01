@@ -1,96 +1,56 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
-
-// * CSS IMPORTS
 import './SignUpForm.css'
 
-const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/
-const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
-const EMAIL_REGEX = /\S+@\S+\.\S+/
+// const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/
+// const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
+// const EMAIL_REGEX = /\S+@\S+\.\S+/
 
 const SignUpForm = () => {
   const userRef = useRef()
-  const errRef = useRef()
-
   const [user, setUser] = useState('')
-  const [validName, setValidName] = useState(false)
+  const [validName] = useState(false)
   const [userFocus, setUserFocus] = useState(false)
 
   const [email, setEmail] = useState('')
-  const [vaildEmail, setValidEmail] = useState(false)
+  const [validEmail] = useState(false)
   const [emailFocus, setEmailFocus] = useState(false)
 
-  // const [phoneNumber, setPhoneNumber] = useState('')
-
   const [pwd, setPwd] = useState('')
-  const [validPwd, setValidPwd] = useState(false)
+  const [validPwd] = useState(false)
   const [pwdFocus, setPwdFocus] = useState(false)
-
-  const [matchPwd] = useState('')
-  const [validMatch, setValidMatch] = useState(false)
-  // const [matchFocus, setMatchFocus] = useState(false)
 
   const [errMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false)
-
-  useEffect(() => {
-    userRef.current.focus()
-  }, [])
-
-  useEffect(() => {
-    const result = USER_REGEX.test(user)
-    console.log(result)
-    console.log(user)
-    setValidName(result)
-  }, [user])
-
-  useEffect(() => {
-    const result = EMAIL_REGEX.test(email)
-    console.log(result)
-    console.log(email)
-    setValidEmail(result)
-  }, [email])
-
-  useEffect(() => {
-    const result = PWD_REGEX.test(pwd)
-    console.log(result)
-    console.log(user)
-    setValidPwd(result)
-    const match = pwd === matchPwd
-    setValidMatch(match)
-  }, [pwd, matchPwd])
-
-  useEffect(() => {
-    setErrMsg('')
-  }, [user, pwd, matchPwd])
 
   const [isChecked, setIsChecked] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     // check if the username, password, and email are valid
-    const v1 = USER_REGEX.test(user)
-    const v2 = PWD_REGEX.test(pwd)
-    if (v1 || v2) {
-      setErrMsg('invalid entry')
-      return
-    }
+    // const v1 = USER_REGEX.test(user)
+    // const v2 = PWD_REGEX.test(pwd)
+    // if (!v1 || !v2) {
+    //  setErrMsg('Invalid entry')
+    //  return
+    // }
+
     try {
       console.log('Sending registration request...')
-      const response = await Axios.post('https://workwaves-prototype-w9ikm.ondigitalocean.app/api/registration', {
-        username: user,
-        password: pwd,
-        email: email
+      const response = await Axios.post('https://workwaves-prototype-w9ikm.ondigitalocean.app/api/registration', null, {
+        params: {
+          username: user,
+          password: pwd,
+          email: email
+        }
       })
-      // check the response for success or error message
+
       if (response.status === 201) {
         console.log('Registration successful')
-        // registration successful
         setSuccess(true)
       } else {
         console.log('Registration failed')
-        // registration failed, display an error message
         setErrMsg('Registration failed')
       }
     } catch (error) {
@@ -100,27 +60,25 @@ const SignUpForm = () => {
   }
 
   return (
-    <>
     <div className='SignupContainer'>
-    {success
-      ? (
+      {success
+        ? (
         <section>
           <h1>Success!</h1>
           <p>
-            <a href='#'>Sign In</a>
+            <Link to='/login'>Sign In</Link>
           </p>
         </section>
-        )
-      : (
+          )
+        : (
         <section>
-          <p ref={errRef} className={errMsg
-            ? 'errmsg'
-            : 'offscreen'} aria-live='assertive'>{errMsg}</p>
+          <p className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertive'>
+            {errMsg}
+          </p>
           <h1>Sign Up</h1>
           <form onSubmit={handleSubmit}>
-            <label htmlFor='username'>
-              username:
-            </label>
+            {/* Username input */}
+            <label htmlFor='username'>Username:</label>
             <input
               type='text'
               id='username'
@@ -134,18 +92,15 @@ const SignUpForm = () => {
               onFocus={() => setUserFocus(true)}
               onBlur={() => setUserFocus(false)}
             />
-            <p id='uidnote' className={userFocus && user &&
-              !validName
-              ? 'instructions'
-              : 'offscreen'}>
-              must be 4-24 characters. <br />
-              must begin with a letter. <br />
-              letters, numbers, underscore, hyphens allowed.
+            <p
+              id='uidnote'
+              className={userFocus && user && !validName ? 'instructions' : 'offscreen'}
+            >
+              Must be 4-24 characters. Must begin with a letter.
             </p>
 
-            <label htmlFor='email'>
-              Email:
-            </label>
+            {/* Email input */}
+            <label htmlFor='email'>Email:</label>
             <input
               type='email'
               id='email'
@@ -153,35 +108,19 @@ const SignUpForm = () => {
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               required
-              aria-invalid={vaildEmail ? 'false' : 'true'}
+              aria-invalid={validEmail ? 'false' : 'true'}
               onFocus={() => setEmailFocus(true)}
               onBlur={() => setEmailFocus(false)}
             />
-
             <p
-              id='uidnote' className={
-                email && emailFocus && !vaildEmail
-                  ? 'instructions'
-                  : 'offscreen'
-              }
+              id='emailnote'
+              className={emailFocus && email && !validEmail ? 'instructions' : 'offscreen'}
             >
               Please enter a valid email address.
             </p>
 
-            {/* <label htmlFor='phone'>
-              Phone Number:
-            </label>
-            <input
-              type='tel'
-              id='phone'
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              required
-            /> */}
-
-            <label htmlFor='password'>
-              password:
-            </label>
+            {/* Password input */}
+            <label htmlFor='password'>Password:</label>
             <input
               type='password'
               id='password'
@@ -193,60 +132,35 @@ const SignUpForm = () => {
               onFocus={() => setPwdFocus(true)}
               onBlur={() => setPwdFocus(false)}
             />
-            <p id='pwdnote' className={pwdFocus && !validPwd ? 'instructions' : 'offscreen'}>
-              password must be 8 - 24 characters <br />
-              must include upercase and lowercase letters, a number and a special character. <br />
-              Allowed special characters:
-              <span aria-label='exclamation mark'>!</span>
-              <span aria-label='at symbol'>@</span>
-              <span aria-label='hashtag'>#</span>
-              <span aria-label='dollar sign'>$</span>
-              <span aria-label='pecent'>%</span>
+            <p
+              id='pwdnote'
+              className={pwdFocus && !validPwd ? 'instructions' : 'offscreen'}
+            >
+              Password must be 8-24 characters, include uppercase, lowercase letters, a number, and a special character.
             </p>
 
-            {/* <label htmlFor='password'>
-              confirm password:
-            </label>
-            <input
-              type='password'
-              id='confirm_pwd'
-              onChange={(e) => setMatchPwd(e.target.value)}
-              value={matchPwd}
-              required
-              aria-invalid={validMatch ? 'false' : 'true'}
-              aria-describedby='confirmnote'
-              onFocus={() => setMatchFocus(true)}
-              onBlur={() => setMatchFocus(false)}
-            />
-            <p id='confirmnote' className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}>
-              must match the first password. <br />
-            </p> */}
-
+            {/* Checkbox for terms and conditions */}
             <label>
               <input
                 type='checkbox'
                 checked={isChecked}
                 onChange={() => setIsChecked(!isChecked)}
               />
-              I agree to the terms and conditions <br />
+              I agree to the terms and conditions.
             </label>
 
-            <button disabled={!!(!validName || !validPwd || !validMatch)}>
-              Sign Up
-            </button>
+            <button onSubmit={handleSubmit}>Sign Up</button>
             <p>
-              Already registered?<br />
+              Already registered?{' '}
               <span className='line'>
-                {/* put router link here */}
                 <Link to='/login'>Sign In</Link>
               </span>
             </p>
           </form>
         </section>
-        )}
+          )}
     </div>
-
-    </>
   )
 }
+
 export default SignUpForm
