@@ -1,4 +1,3 @@
-import React from 'react'
 // TODO : modify it to fetch the data from DB
 
 export const CategorySideBarData = [
