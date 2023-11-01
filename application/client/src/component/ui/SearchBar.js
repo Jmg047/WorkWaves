@@ -4,34 +4,60 @@ import axios from 'axios'
 function SearchBar ({ onSearch }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
+  const [isSearching, setIsSearching] = useState(false)
 
   const handleInputChange = (event) => {
     setQuery(event.target.value)
   }
 
+  const fetchGigs = (query) => {
+    axios.get(`http://localhost:2000/get-gigs/?title=${query}`)
+      .then((response) => {
+        setSearchResults(response.data)
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.error(`Server error: ${error.response.data}`)
+        } else {
+          console.error('Network error: Unable to fetch data.')
+        }
+      })
+  }
+
+  const fetchWorkers = (query) => {
+    axios.get(`http://localhost:2000/get-workers/?FirstName=${query}`)
+      .then((response) => {
+        setSearchResults(response.data)
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.error(`Server error: ${error.response.data}`)
+        } else {
+          console.error('Network error: Unable to fetch data.')
+        }
+      })
+  }
+
   useEffect(() => {
     const delay = setTimeout(() => {
       if (query) {
-        axios.get(`https://workwaves-prototype-w9ikm.ondigitalocean.app/api/get-workers/?FirstName=${query}`)
-          .then((response) => {
-            setSearchResults(response.data)
-          })
-          .catch((error) => {
-            if (error.response) {
-              console.error(`Server error: ${error.response.data}`)
-            } else {
-              console.error('Network error: Unable to fetch data.')
-            }
-          })
+        setIsSearching(true)
+        if (onSearch) {
+          fetchWorkers(query) // For "Find a worker"
+        } else {
+          fetchGigs(query) // For "Find a job"
+        }
       } else {
+        setIsSearching(false)
         setSearchResults([])
       }
     }, 100)
 
     return () => clearTimeout(delay)
-  }, [query])
+  }, [query, onSearch])
 
   return (
+    <div className='search-bar-container'>
     <div>
       <input
         type='text'
@@ -40,15 +66,20 @@ function SearchBar ({ onSearch }) {
         onChange={handleInputChange}
       />
       <button onClick={() => onSearch(query)}>Search</button>
+    </div>
 
-      <ul>
+    {isSearching && (
+      <ul className='search-results'>
         {searchResults.map((result) => (
           <li key={result._id}>
-            {result.FirstName} {result.LastName} {result.Location}
+            {onSearch
+              ? `${result.FirstName} ${result.LastName} ${result.Location}`
+              : `${result.title} ${result.location}`}
           </li>
         ))}
       </ul>
-    </div>
+    )}
+  </div>
   )
 }
 
