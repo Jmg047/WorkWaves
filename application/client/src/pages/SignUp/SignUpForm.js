@@ -21,15 +21,15 @@ const SignUpForm = () => {
   const [vaildEmail, setValidEmail] = useState(false)
   const [emailFocus, setEmailFocus] = useState(false)
 
-  const [phoneNumber, setPhoneNumber] = useState('')
+  // const [phoneNumber, setPhoneNumber] = useState('')
 
   const [pwd, setPwd] = useState('')
   const [validPwd, setValidPwd] = useState(false)
   const [pwdFocus, setPwdFocus] = useState(false)
 
-  const [matchPwd, setMatchPwd] = useState('')
+  const [matchPwd] = useState('')
   const [validMatch, setValidMatch] = useState(false)
-  const [matchFocus, setMatchFocus] = useState(false)
+  // const [matchFocus, setMatchFocus] = useState(false)
 
   const [errMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false)
@@ -78,7 +78,7 @@ const SignUpForm = () => {
     }
     try {
       console.log('Sending registration request...')
-      const response = await Axios.post('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/workers', {
+      const response = await Axios.post('https://workwaves-prototype-w9ikm.ondigitalocean.app/api/registration', {
         username: user,
         password: pwd,
         email: email
