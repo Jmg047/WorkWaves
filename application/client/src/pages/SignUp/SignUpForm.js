@@ -84,14 +84,16 @@ const SignUpForm = () => {
   return (
     <>
     <div className='SignupContainer'>
-    {success ? (
+    {success
+      ? (
         <section>
           <h1>Success!</h1>
           <p>
             <a href='#'>Sign In</a>
           </p>
         </section>
-      ) : (
+        )
+      : (
         <section>
           <p ref={errRef} className={errMsg
             ? 'errmsg'
@@ -223,9 +225,9 @@ const SignUpForm = () => {
             </p>
           </form>
         </section>
-      )}
+        )}
     </div>
-  
+
     </>
   )
 }

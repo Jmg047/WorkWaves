@@ -33,7 +33,8 @@ const LoginForm = () => {
   return (
         <>
         <div className='LoginContainer'>
-        {success ? (
+        {success
+          ? (
             <section>
                 <h1> You are logged in</h1>
                 <br />
@@ -41,7 +42,8 @@ const LoginForm = () => {
                     <a href='#'>Go to Home</a>
                 </p>
             </section>
-        ) : (
+            )
+          : (
         <section>
             <p ref={errRef} className={errMsg
               ? 'errmsg'
@@ -77,9 +79,9 @@ const LoginForm = () => {
                 </span>
             </p>
         </section>
-        )}
+            )}
         </div>
-        
+
         </>
   )
 }
