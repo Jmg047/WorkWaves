@@ -1,15 +1,15 @@
 .feed {
   display: flex;
   flex-wrap: wrap; /* Allow posts to wrap to the next line */
-  justify-content: space-between; /* Evenly distribute space between posts */
-  width: 750px;
+  justify-content: space-around; /* Evenly distribute space between posts */
+  width: 1128px;
   background-color: orange;
   padding: 10px; /* Add padding to create space around posts */
   overflow: auto;
 }
 
 .post {
-  width: calc(50% - 10px); /* Calculate 50% of the container width with spacing */
+  width: 550px; /* Calculate 50% of the container width with spacing */
   height: auto; /* Remove fixed height to allow posts to adjust their height based on content */
   margin-bottom: 20px; /* Add margin to create space around and between posts */
   padding: 10px; /* Add padding to create space inside each post */
@@ -35,4 +35,18 @@
   align-items: center;
   background-color: aqua;
   height: 25%;
+}
+
+a{
+  background: #007bff; /* Blue button background color */
+  color: #fff; /* White text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0056b3; /* Darker blue on hover */
 }

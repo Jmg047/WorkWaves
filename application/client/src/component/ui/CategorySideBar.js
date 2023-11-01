@@ -1,11 +1,14 @@
 import React from 'react'
 import { CategorySideBarData } from './CategorySideBarData'
 import CategorySideBarCSS from './CategorySideBar.module.css'
-// TODO : ? use REACT ROUTER to handle the route of my link/button
+
 
 function CategorySideBar () {
   return (
-    <div className={CategorySideBarCSS.SideBar}>Category
+    <div className={CategorySideBarCSS.SideBar}>
+      <div className={CategorySideBarCSS.title}>
+        Category
+      </div>
       <ul className={CategorySideBarCSS.SideBarList}>
         {CategorySideBarData.map((val, key) => {
           return (
