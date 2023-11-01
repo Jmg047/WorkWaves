@@ -23,30 +23,30 @@ const LoginForm = () => {
   }, [user, pwd])
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-  
+    e.preventDefault()
+
     try {
-      console.log('Sending login request...');
-      const response = await Axios.post('/login', {
+      console.log('Sending login request...')
+      const response = await Axios.get('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/login?username=james_worker1&password=hashed_password_81', {
         username: user,
-        password: pwd,
-      });
-  
+        password: pwd
+      })
+
       // check the response for success or error messages
       if (response.status === 200) {
-        console.log('Login successful');
+        console.log('Login successful')
         // login successful
-        setSuccess(true);
+        setSuccess(true)
       } else {
-        console.log('Login failed');
+        console.log('Login failed')
         // login failed, display an error message
-        setErrMsg('Invalid username or password');
+        setErrMsg('Invalid username or password')
       }
     } catch (error) {
-      console.error('Error during login:', error);
-      setErrMsg('Error during login. Please try again.');
+      console.error('Error during login:', error)
+      setErrMsg('Error during login. Please try again.')
     }
-  };
+  }
 
   return (
         <>

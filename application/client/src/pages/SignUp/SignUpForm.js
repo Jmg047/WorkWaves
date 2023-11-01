@@ -77,27 +77,27 @@ const SignUpForm = () => {
       return
     }
     try {
-      console.log('Sending registration request...');
+      console.log('Sending registration request...')
       const response = await Axios.post('/registration', {
         username: user,
         password: pwd,
-        email: email,
-      });
-      // check the response for success or error message  
+        email: email
+      })
+      // check the response for success or error message
       if (response.status === 201) {
-        console.log('Registration successful');
+        console.log('Registration successful')
         // registration successful
-        setSuccess(true);
+        setSuccess(true)
       } else {
         console.log('Registration failed')
         // registration failed, display an error message
-        setErrMsg('Registration failed');
+        setErrMsg('Registration failed')
       }
     } catch (error) {
-      console.error('Error during registration:', error);
-      setErrMsg('Error during registration. Please try again.');
+      console.error('Error during registration:', error)
+      setErrMsg('Error during registration. Please try again.')
     }
-  };
+  }
 
   return (
     <>
@@ -168,7 +168,7 @@ const SignUpForm = () => {
               Please enter a valid email address.
             </p>
 
-            <label htmlFor='phone'>
+            {/* <label htmlFor='phone'>
               Phone Number:
             </label>
             <input
@@ -177,7 +177,7 @@ const SignUpForm = () => {
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
-            />
+            /> */}
 
             <label htmlFor='password'>
               password:
@@ -204,7 +204,7 @@ const SignUpForm = () => {
               <span aria-label='pecent'>%</span>
             </p>
 
-            <label htmlFor='password'>
+            {/* <label htmlFor='password'>
               confirm password:
             </label>
             <input
@@ -220,7 +220,7 @@ const SignUpForm = () => {
             />
             <p id='confirmnote' className={matchFocus && !validMatch ? 'instructions' : 'offscreen'}>
               must match the first password. <br />
-            </p>
+            </p> */}
 
             <label>
               <input
