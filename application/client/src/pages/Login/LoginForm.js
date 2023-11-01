@@ -22,13 +22,30 @@ const LoginForm = () => {
   }, [user, pwd])
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    console.log(user, pwd)
-    setUser('')
-    setPwd('')
-
-    setSuccess(true)
-  }
+    e.preventDefault();
+  
+    try {
+      console.log('Sending login request...');
+      const response = await Axios.post('/login', {
+        username: user,
+        password: pwd,
+      });
+  
+      // check the response for success or error messages
+      if (response.status === 200) {
+        console.log('Login successful');
+        // login successful
+        setSuccess(true);
+      } else {
+        console.log('Login failed');
+        // login failed, display an error message
+        setErrMsg('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setErrMsg('Error during login. Please try again.');
+    }
+  };
 
   return (
         <>
@@ -81,7 +98,6 @@ const LoginForm = () => {
         </section>
             )}
         </div>
-
         </>
   )
 }
