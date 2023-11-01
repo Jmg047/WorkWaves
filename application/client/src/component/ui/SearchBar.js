@@ -5,13 +5,14 @@ function SearchBar ({ onSearch }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
+  const URL = 'https://workwaves-prototype-w9ikm.ondigitalocean.app/api' // http://localhost:2000
 
   const handleInputChange = (event) => {
     setQuery(event.target.value)
   }
 
   const fetchGigs = (query) => {
-    axios.get(`http://localhost:2000/get-gigs/?title=${query}`)
+    axios.get(`${URL}/get-gigs/?title=${query}`)
       .then((response) => {
         setSearchResults(response.data)
       })
@@ -25,7 +26,7 @@ function SearchBar ({ onSearch }) {
   }
 
   const fetchWorkers = (query) => {
-    axios.get(`http://localhost:2000/get-workers/?FirstName=${query}`)
+    axios.get(`${URL}/get-workers/?FirstName=${query}`)
       .then((response) => {
         setSearchResults(response.data)
       })
@@ -71,7 +72,7 @@ function SearchBar ({ onSearch }) {
     {isSearching && (
       <ul className='search-results'>
         {searchResults.map((result) => (
-          <li key={result._id}>
+          <li key={result._id} className='search-results'>
             {onSearch
               ? `${result.FirstName} ${result.LastName} ${result.Location}`
               : `${result.title} ${result.location}`}
