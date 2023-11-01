@@ -21,7 +21,7 @@ function SearchBar ({ onSearch }) {
           }
         }
 
-        fetch(`http://localhost:2000/get-workers/?FirstName=${query}`, requestOptions)
+        fetch(`https://workwaves-prototype-w9ikm.ondigitalocean.app/api/get-workers/?FirstName=${query}`, requestOptions)
           .then(response => {
             if (!response.ok) {
               throw new Error('Network response was not ok')

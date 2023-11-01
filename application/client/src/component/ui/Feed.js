@@ -12,7 +12,7 @@ function Feed () {
   const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:2000/get-gigs'
+    const apiUrl = 'https://workwaves-prototype-w9ikm.ondigitalocean.app/api/get-gigs'
 
     axios.get(apiUrl)
       .then(response => {
