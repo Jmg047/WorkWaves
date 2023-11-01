@@ -27,7 +27,7 @@ const LoginForm = () => {
 
     try {
       console.log('Sending login request...')
-      const response = await Axios.get('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/login?username=james_worker1&password=hashed_password_81', {
+      const response = await Axios.get('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/workers', {
         username: user,
         password: pwd
       })
