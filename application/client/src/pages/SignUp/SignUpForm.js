@@ -243,7 +243,7 @@ const SignUpForm = () => {
             </p>
           </form>
         </section>
-        )}
+      )}
     </div>
 
     </>

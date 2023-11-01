@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import bartenderJob from './bartenderJob.png'
-import JobDetails from './JobDetails'
+
 // * LIBRARY IMPORT
 import axios from 'axios'
+
+// * COMPONENT IMPORT
+import bartenderJob from './bartenderJob.png'
+import JobDetails from './JobDetails'
 
 // * CSS IMPORT
 import FeedCSS from './Feed.module.css'
@@ -42,10 +45,10 @@ function Feed () {
         <div key={index} className={`${FeedCSS.post}`}>
           <div className={`${FeedCSS.item} item-${index + 1}`}>
             <img src={bartenderJob} alt='Job' width='250' height='150' />
-            {job.title}
+            {job}
             <div className={FeedCSS.jobButtonContainer}>
-              <button onClick={() => openJobDetails(job)}>Details</button>
-              <a href='/JobRequested'>Send job request</a>
+              <button onClick={() => openJobDetails(job)} className={FeedCSS.JobButton}>Details</button>
+              <button href='/JobRequested' className={FeedCSS.JobButton}>Send job request</button>
             </div>
           </div>
         </div>

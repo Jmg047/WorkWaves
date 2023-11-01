@@ -5,7 +5,8 @@ import CategorySideBarCSS from './CategorySideBar.module.css'
 
 function CategorySideBar () {
   return (
-    <div className={CategorySideBarCSS.SideBar}>Category
+    <div className={CategorySideBarCSS.SideBar}>
+      <div className={CategorySideBarCSS.Title}>Category</div>
       <ul className={CategorySideBarCSS.SideBarList}>
         {CategorySideBarData.map((val, key) => {
           return (
@@ -27,13 +28,4 @@ function CategorySideBar () {
     </div>
   )
 }
-
 export default CategorySideBar
-
-// function CategorySideBar () {
-//   return (
-//     <div className='SideBar'>coolesy</div>
-//   )
-// }
-
-// export default CategorySideBar

@@ -1,12 +1,12 @@
 import React from 'react'
-import JobDetailsCSS from './JobDetails.module.css' // Import the CSS file
+import JobDetailsCSS from './JobDetails.module.css'
 
 function JobDetails ({ jobDetails, onClose }) {
   return (
-    <div className={JobDetailsCSS.popup}> {/* Apply the 'popup' class */}
-      <div className={JobDetailsCSS.popupContent}> {/* Apply the 'popupContent' class */}
-        <h2 className={JobDetailsCSS.title}>Job Details</h2> {/* Apply the 'title' class */}
-        <p className={JobDetailsCSS.description}>{jobDetails.description}</p> {/* Apply the 'description' class */}
+    <div className={JobDetailsCSS.popup}>
+      <div className={JobDetailsCSS.popupContent}>
+        <h2 className={JobDetailsCSS.title}>Job Details</h2>
+        <p className={JobDetailsCSS.description}>{jobDetails.description}</p>
         <button onClick={onClose} className={JobDetailsCSS.closeButton}>Close</button>
       </div>
     </div>
