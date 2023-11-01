@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 
 // * CSS IMPORTS
 import './SignUpForm.css'
