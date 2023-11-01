@@ -78,7 +78,7 @@ const SignUpForm = () => {
     }
     try {
       console.log('Sending registration request...')
-      const response = await Axios.post('/registration', {
+      const response = await Axios.post('/https://workwaves-prototype-w9ikm.ondigitalocean.app/api/workers', {
         username: user,
         password: pwd,
         email: email
