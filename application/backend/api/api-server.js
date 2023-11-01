@@ -121,7 +121,7 @@ app.post('/registration', async (req, res) => {
     const username = req.query.username
     const password = req.query.password 
     const email = req.query.email
-
+    
     if (!username || !password || !email) {
       return res.status(400).json({ error: 'All fields (Username, Password, Email) are required' })
     }
