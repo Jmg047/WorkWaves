@@ -4,18 +4,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     min-height: 100vh; 
     padding: 1rem 0.5rem;
+
+    color: white;
 }
 
  section {
-    width: 100%;
-    max-width: 600px; /* Increase the max-width */
-    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    width: 100%;
+    max-width: 600px; /* Increase the max-width */
+    min-height: 400px;
     padding: 2rem; /* Increase the padding for more space inside the form */
+    border-radius: 10px;
+
     background-color: #222527;
   
 }
