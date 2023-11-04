@@ -44,8 +44,8 @@ function Feed () {
       {jobTitles.map((job, index) => (
         <div key={index} className={`${FeedCSS.post}`}>
           <div className={`${FeedCSS.item} item-${index + 1}`}>
-            <img src={bartenderJob} alt='Job' width='250' height='150' />
-            {job}
+            <img src={bartenderJob} alt='Job' width='350' height='170' />
+            <div className={FeedCSS.JobTitle}>{job}</div>
             <div className={FeedCSS.jobButtonContainer}>
               <button onClick={() => openJobDetails(job)} className={FeedCSS.JobButton}>Details</button>
               <button href='/JobRequested' className={FeedCSS.JobButton}>Send job request</button>
