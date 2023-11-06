@@ -10,33 +10,47 @@
 }
 
 .post {
-  width: calc(50% - 20px); /* Calculate 50% of the container width with spacing */
+  display: flex;
+  justify-content: center;
+  
+  width: calc(50.4% - 20px); /* Calculate 50% of the container width with spacing */
   height: auto; /* Remove fixed height to allow posts to adjust their height based on content */
   margin-bottom: 20px; /* Add margin to create space around and between posts */
   padding: 10px; /* Add padding to create space inside each post */
-  display: flex;
-  justify-content: center;
+ 
+  /* background-color: green; */
 }
 
 .item {
-  width: 300px;
-  background-color:  #e5eaf5;
+  width: 500px;
+  background-color:  #222526;
   padding: 1em;
   font-weight: 700;
-  color: var(--clr-light);
+  color: white;
   text-align: center;
   border: 10px solid var(--clr-accent);
   border-radius: 10px;
 }
 
-.jobButtonContainer {
+.JobTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30px;
   margin-top: 10px;
+  /* background-color: aqua; */
+}
+
+.jobButtonContainer {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
   align-items: center;
-  /* background-color: aqua; */
+
   height: 25%;
+  margin-top: 10px;
+  /* background-color: red; */
 }
 
 .JobButton {
