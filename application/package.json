@@ -10,13 +10,13 @@
     "watch": "webpack --watch --config webpack.config.js",
     "start": "concurrently \"node backend/server/server.js\" \"node backend/api/api-server.js\""
   },
-  "repository": "git+https://github.com/Jmg047/CSC648-demo-team03.git",
+  "repository": "git+https://github.com/Jmg047/CSC648-WorkWaves-team03.git",
   "author": "Jmg047 <90755835+Jmg047@users.noreply.github.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jmg047/CSC648-demo-team03/issues"
+    "url": "https://github.com/Jmg047/CSC648-WorkWaves-team03/issues"
   },
-  "homepage": "https://github.com/Jmg047/CSC648-demo-team03#readme",
+  "homepage": "https://github.com/Jmg047/CSC648-WorkWaves-team03#readme",
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "axios": "^1.5.1",
