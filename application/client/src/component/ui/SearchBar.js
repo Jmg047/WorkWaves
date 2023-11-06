@@ -8,7 +8,7 @@ function SearchBar ({ onSearch }) {
   const [query, setQuery] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isSearching, setIsSearching] = useState(false)
-  const URL = 'https://workwaves-prototype-w9ikm.ondigitalocean.app/api' // http://localhost:2000
+  const URL = 'https://workwaves-jm2b5.ondigitalocean.app/api' // http://localhost:2000
 
   const handleInputChange = (event) => {
     setQuery(event.target.value)

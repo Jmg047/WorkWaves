@@ -7,7 +7,7 @@ const GigList = ({ query }) => {
 
   useEffect(() => {
     // Determine the data type and fetch data accordingly
-    const apiUrl = dataType === 'gigs' ? 'https://workwaves-prototype-w9ikm.ondigitalocean.app/api/get-gigs/' : 'https://workwaves-prototype-w9ikm.ondigitalocean.app/api/get-workers/'
+    const apiUrl = dataType === 'gigs' ? 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs/' : 'https://workwaves-jm2b5.ondigitalocean.app/api/get-workers/'
 
     const requestOptions = {
       method: 'GET',

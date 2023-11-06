@@ -27,7 +27,7 @@ const LoginForm = () => {
 
     try {
       console.log('Sending login request...')
-      const response = await Axios.post('https://workwaves-prototype-w9ikm.ondigitalocean.app/api/login', null, {
+      const response = await Axios.post('https://workwaves-jm2b5.ondigitalocean.app/api/login', null, {
         params: {
           username: username,
           password: password
