@@ -1,18 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Axios from 'axios'
-
-// * CSS IMPORT
 import './LoginForm.css'
 
 const LoginForm = () => {
   const userRef = useRef()
   const errRef = useRef()
-
   const [username, setUser] = useState('')
   const [password, setPwd] = useState('')
   const [errMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false)
+
+  const [loggedInUser, setLoggedInUser] = useState('')
 
   useEffect(() => {
     userRef.current.focus()
@@ -34,14 +33,12 @@ const LoginForm = () => {
         }
       })
 
-      // check the response for success or error messages
       if (response.status === 200) {
         console.log('Login successful')
-        // login successful
         setSuccess(true)
+        setLoggedInUser(username) // Store the logged-in username
       } else {
         console.log('Login failed')
-        // login failed, display an error message
         setErrMsg('Invalid username or password')
       }
     } catch (error) {
@@ -51,24 +48,21 @@ const LoginForm = () => {
   }
 
   return (
-        <>
-        <div className='LoginContainer'>
-        {success
-          ? (
-            <section>
-                <h1> You are logged in</h1>
-                <br />
-                <p>
-                    <a href='#'>Go to Home</a>
-                </p>
-            </section>
-            )
-          : (
+    <div className='LoginContainer'>
+      {success
+        ? (
         <section>
-            <p ref={errRef} className={errMsg
-              ? 'errmsg'
-              : 'offscreen'} aria-live='assertove'>{errMsg}</p>
-            <h1>Login</h1>
+          <h1>Hi, {loggedInUser}! You are logged in</h1>
+          <br />
+          <p>
+            <Link to='/'>Go to Home</Link>
+          </p>
+        </section>
+          )
+        : (
+        <section>
+          <p ref={errRef} className={errMsg ? 'errmsg' : 'offscreen'} aria-live='assertove'>{errMsg}</p>
+          <h1>Login</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='username'>Username:</label>
                 <input
@@ -99,9 +93,9 @@ const LoginForm = () => {
                 </span>
             </p>
         </section>
-            )}
+
+          )}
         </div>
-        </>
   )
 }
 export default LoginForm
