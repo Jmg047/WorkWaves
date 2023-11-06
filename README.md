@@ -4,6 +4,8 @@ Prototype for demonstration purposes.
 
 ## How to run
 
+cd to /application
+
 install yarn globally: `npm install -g yarn` and install dependencies with `yarn`
 
 start application: `yarn start`
