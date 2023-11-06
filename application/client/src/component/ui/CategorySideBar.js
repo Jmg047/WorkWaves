@@ -1,15 +1,17 @@
 import React from 'react'
-import { CategorySideBarData } from '../ui/CategorySideBarData'
+import { CategorySideBarData } from './CategorySideBarData'
+import CategorySideBarCSS from './CategorySideBar.module.css'
 // TODO : ? use REACT ROUTER to handle the route of my link/button
 
 function CategorySideBar () {
   return (
-    <div className='SideBar'>Category
-      <ul className='SideBar-list'>
+    <div className={CategorySideBarCSS.SideBar}>
+      <div className={CategorySideBarCSS.Title}>Category</div>
+      <ul className={CategorySideBarCSS.SideBarList}>
         {CategorySideBarData.map((val, key) => {
           return (
           <li key={key}
-          className='category-row'
+          className={CategorySideBarCSS.categoryRow}
           id={window.location.pathname === val.link ? 'active' : ''}
            onClick={() => {
              window.location.pathname = val.link
@@ -26,13 +28,4 @@ function CategorySideBar () {
     </div>
   )
 }
-
 export default CategorySideBar
-
-// function CategorySideBar () {
-//   return (
-//     <div className='SideBar'>coolesy</div>
-//   )
-// }
-
-// export default CategorySideBar
