@@ -1,5 +1,5 @@
 {
-  "name": "demo_648team03",
+  "name": "workwaves-team03",
   "version": "1.0.0",
   "description": "CSC648 group project",
   "main": "./server/server.js",
@@ -10,13 +10,13 @@
     "watch": "webpack --watch --config webpack.config.js",
     "start": "concurrently \"node backend/server/server.js\" \"node backend/api/api-server.js\""
   },
-  "repository": "git+https://github.com/Jmg047/CSC648-demo-team03.git",
+  "repository": "git+https://github.com/Jmg047/CSC648-WorkWaves-team03.git",
   "author": "Jmg047 <90755835+Jmg047@users.noreply.github.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jmg047/CSC648-demo-team03/issues"
+    "url": "https://github.com/Jmg047/CSC648-WorkWaves-team03/issues"
   },
-  "homepage": "https://github.com/Jmg047/CSC648-demo-team03#readme",
+  "homepage": "https://github.com/Jmg047/CSC648-WorkWaves-team03#readme",
   "dependencies": {
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "axios": "^1.5.1",
@@ -27,6 +27,7 @@
     "eslint-config-standard-react": "^13.0.0",
     "eslint-plugin-storybook": "^0.6.15",
     "express": "^4.18.2",
+    "express-router": "^0.0.1",
     "mongodb": "^6.2.0",
     "mongosh": "^2.0.1",
     "react": "^18.2.0",
