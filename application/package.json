@@ -1,5 +1,5 @@
 {
-  "name": "WorkWaves-Team03",
+  "name": "workwaves-team03",
   "version": "1.0.0",
   "description": "CSC648 group project",
   "main": "./server/server.js",
