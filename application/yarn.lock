@@ -4266,6 +4266,11 @@ expand-template@^2.0.3:
   resolved "https://registry.yarnpkg.com/expand-template/-/expand-template-2.0.3.tgz#6e14b3fcee0f3a6340ecb57d2e8918692052a47c"
   integrity sha512-XYfuKMvj4O35f/pOXLObndIRvyQ+/+6AhODh+OKWj9S9498pHHn/IMszH+gt0fBCRWMNfk1ZSp5x3AifmnI2vg==
 
+express-router@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/express-router/-/express-router-0.0.1.tgz#9351704deb2e7cadd765a6692d5c09936d790b25"
+  integrity sha512-6d8DAAUkhihgVQAOqo3lef+B/c9Q42mxKtt6O92fPmHotnv2TQvNClM+bUtTzX8q+V1v5YDyfFdZYTi3lMK/Vg==
+
 express@^4.18.2:
   version "4.18.2"
   resolved "https://registry.yarnpkg.com/express/-/express-4.18.2.tgz#3fabe08296e930c796c19e3c516979386ba9fd59"
