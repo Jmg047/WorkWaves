@@ -2,7 +2,6 @@ const express = require('express')
 const app = express()
 const port = 3000
 const path = require('path')
-
 const config = {
   baseUrl: '/'
 }
@@ -21,6 +20,7 @@ indexRouter.get('/', (req, res) => {
 indexRouter.get('*', (req, res) => {
   res.sendFile(path.join(baseDir, 'static/dist/index.html'))
 })
+
 
 app.use('/', indexRouter)
 
