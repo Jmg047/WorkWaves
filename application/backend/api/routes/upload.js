@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + '-' + file.originalname);
   }
 });
+//h
 
 // Using multer for storage
 const upload = multer({ storage: storage });

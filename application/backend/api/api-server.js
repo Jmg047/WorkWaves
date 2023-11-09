@@ -27,6 +27,7 @@ app.use('/registration', registration)
 
 app.use('/login', login)
 
+//calling upload route
 app.use('/upload', uploadRoute);
 
 app.listen(port, () => {

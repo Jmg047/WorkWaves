@@ -20,7 +20,7 @@ indexRouter.get('/', (req, res) => {
 indexRouter.get('*', (req, res) => {
   res.sendFile(path.join(baseDir, 'static/dist/index.html'))
 })
-
+//h
 
 app.use('/', indexRouter)
 
