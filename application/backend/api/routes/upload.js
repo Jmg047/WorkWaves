@@ -19,10 +19,10 @@ const storage = multer.diskStorage({
   }
 });
 
-// Use multer for storage
+// Using multer for storage
 const upload = multer({ storage: storage });
 
-// Create express router
+// Creating express router
 const router = express.Router();
 
 // POST endpoint for image upload
