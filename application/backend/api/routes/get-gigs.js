@@ -9,12 +9,13 @@ router.get('/', async (req, res) => {
       const client = new MongoClient(mongoURI)
       await client.connect()
   
-      const db = client.db('demo')
-      const collection = db.collection('demo')
+      const db = client.db('gigs')
+      const collection = db.collection('gigs')
   
       const title = req.query.title
       const location = req.query.location
-  
+      const category = req.query.category
+      
       const query = {
         Type: { $ne: 'Worker' },
       }
@@ -25,6 +26,10 @@ router.get('/', async (req, res) => {
   
       if (req.query.location) {
         query.location = { $regex: new RegExp(req.query.location, 'i') }
+      }
+
+      if (req.query.category) {
+        query.category = { $regex: new RegExp(req.query.category, 'i') }
       }
   
       const gigs = await collection.find(query).toArray()

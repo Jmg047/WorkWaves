@@ -14,4 +14,5 @@
 # misc
 .DS_Store
 yarn-error.log
-dist/index.bundle.js
+/client/static/dist/*
+!/client/static/dist/index.bundle.js
