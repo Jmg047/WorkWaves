@@ -10,6 +10,7 @@ const gigs = require('./routes/gigs')
 const login = require('./routes/login')
 const registration = require('./routes/registration')
 const workers = require('./routes/workers')
+const upload = require('./routes/upload.js')
 
 app.use(cors())
 
@@ -29,6 +30,7 @@ app.use('/registration', registration)
 
 app.use('/login', login)
 
+app.use('/upload', upload)
 
 app.listen(port, () => {
   console.log(`API server is running on port ${port}`)
