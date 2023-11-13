@@ -1,8 +1,10 @@
 const { MongoClient } = require('mongodb')
 const express = require('express')
 const router = express.Router()
+const ImageModel = require('./image.model')
+const axios = require('axios')
 
-const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/gigs'
+const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/demo'
 
 router.post('/', async (req, res) => {
     try {
@@ -11,6 +13,7 @@ router.post('/', async (req, res) => {
       const location = req.query.location
       const payment = [ req.query.payment ]
       const category = req.query.category
+      const testImage = req.file
 
       if (!title || !description || !location || !payment) {
         return res.status(400).json({ error: 'All fields (title, description, location, payment) are required' })
@@ -28,13 +31,23 @@ router.post('/', async (req, res) => {
         client.close()
         return res.status(400).json({ error: 'Duplicate entry already exists' })
       }
+
+       // Make a request to /uploads to upload the image and get the processed image data
+       const uploadResponse = await axios.post('http://localhost:2000/upload', {
+        title: title, // Pass the gig name for the image filename
+        testImage: testImage // Pass the image data (assuming 'testImage' is the field name for image data)
+    })
+
+    // Use the processed image data from the response
+    const uploadedImage = uploadResponse.data
   
       const newGig = {
         title: title,
         description: description,
         location: location,
         payment: payment,
-        category: category
+        category: category,
+        image: uploadedImage
       }
   
       const result = await collection.insertOne(newGig)
