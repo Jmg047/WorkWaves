@@ -1,43 +1,51 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import bartenderJob from './bartenderJob.png';
+import JobDetails from './JobDetails';
+import FeedCSS from './Feed.module.css';
+import JobRequest from './JobRequest';
 
-// * LIBRARY IMPORT
-import axios from 'axios'
-
-// * COMPONENT IMPORT
-import bartenderJob from './bartenderJob.png'
-import JobDetails from './JobDetails'
-
-// * CSS IMPORT
-import FeedCSS from './Feed.module.css'
-
-function Feed () {
-  const [jobTitles, setJobTitles] = useState([])
-  const [selectedJob, setSelectedJob] = useState(null)
+function Feed() {
+  const [jobTitles, setJobTitles] = useState([]);
+  const [selectedJob, setSelectedJob] = useState(null);
 
   useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
+    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs';
 
     axios.get(apiUrl)
       .then(response => {
-        // extract job titles from the response and update the state
-        const titles = response.data.map(job => job.title)
-        setJobTitles(titles)
+        const titles = response.data.map(job => job.title);
+        setJobTitles(titles);
       })
       .catch(error => {
-        console.error('Error fetching data:', error)
-      })
-  }, [])
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   const openJobDetails = (job) => {
-    setSelectedJob(job)
-  }
+    // For testing purposes, generate static data
+    const staticJobDetails = {
+      title: 'Software Engineer',
+      where: 'San Francisco, CA',
+      when: 'Full-time',
+      payment: 'Competitive salary',
+      description: 'Exciting opportunity for a skilled software engineer...',
+      photo: 'path/to/your/photo.jpg',
+    };
+    setSelectedJob(staticJobDetails);
+  };
 
   const closeJobDetails = () => {
-    setSelectedJob(null)
-  }
+    setSelectedJob(null);
+  };
 
-  // use the slice method to limit the number of job titles to 4
-  // const displayedJobTitles = jobTitles.slice(0, 4)
+  const openJobRequestModal = () => {
+    setShowJobRequestModal(true);
+  };
+
+  const closeJobRequestModal = () => {
+    setShowJobRequestModal(false);
+  };
 
   return (
     <div className={FeedCSS.feed}>
@@ -57,7 +65,7 @@ function Feed () {
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
       )}
     </div>
-  )
+  );
 }
 
-export default Feed
+export default Feed;
