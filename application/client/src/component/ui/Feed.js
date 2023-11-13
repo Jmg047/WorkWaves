@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import bartenderJob from './bartenderJob.png';
-import JobDetails from './JobDetails';
-import FeedCSS from './Feed.module.css';
-import JobRequest from './JobRequest';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import bartenderJob from './bartenderJob.png'
+import JobDetails from './JobDetails'
+import FeedCSS from './Feed.module.css'
+import JobRequest from './JobRequest'
 
-function Feed() {
-  const [jobTitles, setJobTitles] = useState([]);
-  const [selectedJob, setSelectedJob] = useState(null);
+function Feed () {
+  const [jobTitles, setJobTitles] = useState([])
+  const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs';
+    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
 
     axios.get(apiUrl)
       .then(response => {
-        const titles = response.data.map(job => job.title);
-        setJobTitles(titles);
+        const titles = response.data.map(job => job.title)
+        setJobTitles(titles)
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+        console.error('Error fetching data:', error)
+      })
+  }, [])
 
   const openJobDetails = (job) => {
     // For testing purposes, generate static data
@@ -30,22 +30,23 @@ function Feed() {
       when: 'Full-time',
       payment: 'Competitive salary',
       description: 'Exciting opportunity for a skilled software engineer...',
-      photo: 'path/to/your/photo.jpg',
-    };
-    setSelectedJob(staticJobDetails);
-  };
+      photo: 'path/to/your/photo.jpg'
+    }
+    
+    setSelectedJob(staticJobDetails)
+  }
 
   const closeJobDetails = () => {
-    setSelectedJob(null);
-  };
+    setSelectedJob(null)
+  }
 
   const openJobRequestModal = () => {
-    setShowJobRequestModal(true);
-  };
+    setShowJobRequestModal(true)
+  }
 
   const closeJobRequestModal = () => {
-    setShowJobRequestModal(false);
-  };
+    setShowJobRequestModal(false)
+  }
 
   return (
     <div className={FeedCSS.feed}>
@@ -65,7 +66,7 @@ function Feed() {
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
       )}
     </div>
-  );
+  )
 }
 
-export default Feed;
+export default Feed

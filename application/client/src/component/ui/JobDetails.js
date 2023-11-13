@@ -1,10 +1,10 @@
-import React from 'react';
-import JobDetailsCSS from './JobDetails.module.css';
+import React from 'react'
+import JobDetailsCSS from './JobDetails.module.css'
 
-function JobDetails({ jobDetails, onClose }) {
+function JobDetails ({ jobDetails, onClose }) {
   // Check if jobDetails is null or undefined
   if (!jobDetails) {
-    return null; // or display an error message
+    return null // or display an error message
   }
 
   return (
@@ -23,13 +23,13 @@ function JobDetails({ jobDetails, onClose }) {
           <p className={JobDetailsCSS.description}>{jobDetails.description}</p>
         </div>
         <div className={JobDetailsCSS.buttonContainer}>
-          <button /*</div>onClick={fill it in}*/ className={JobDetailsCSS.previewButton}>Preview</button>
-          <button /*</div>onClick={fill it in}*/ className={JobDetailsCSS.addButton}>Add Job</button>
+          <button /* </div>onClick={fill it in} */ className={JobDetailsCSS.previewButton}>Preview</button>
+          <button /* </div>onClick={fill it in} */ className={JobDetailsCSS.addButton}>Add Job</button>
         </div>
         <button onClick={onClose} className={JobDetailsCSS.closeButton}>Close</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default JobDetails;
+export default JobDetails

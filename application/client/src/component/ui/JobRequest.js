@@ -1,13 +1,13 @@
-import React from 'react';
-import JobRequest from './JobRequest.module.css';
+import React from 'react'
+import JobRequest from './JobRequest.module.css'
 
-function JobRequest({ onClose }) {
+function jobRequest ({ onClose }) {
   const handleSendRequest = () => {
     // Add logic to handle sending the job request
     // You can include form data and any necessary API calls here
     // For simplicity, we're just closing the modal in this example
-    onClose();
-  };
+    onClose()
+  }
 
   return (
     <div className={FeedCSS.modal}>
@@ -18,7 +18,7 @@ function JobRequest({ onClose }) {
         <button onClick={handleSendRequest}>Send Request</button>
       </div>
     </div>
-  );
+  )
 }
 
-export default JobRequest;
+export default JobRequest
