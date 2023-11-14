@@ -44,7 +44,7 @@ function EFeedJobsRequests () {
 
   return (
       <div>
-      <h1 className={EFeedJobsRequestedCSS.Title}>JOBS</h1>
+      <h1 className={EFeedJobsRequestedCSS.Title}>Requests</h1>
       <div className={EFeedJobsRequestedCSS.feed}>
         {displayedJobTitles.map((job, index) => (
           <div key={index} className={`${EFeedJobsRequestedCSS.post}`}>
