@@ -1,9 +1,6 @@
 import React from 'react'
 
 // * COMPONENTS IMPORT
-// import SettingsSideBar from 'ui/SettingsSideBar'
-// import Feed from 'ui/Feed'
-
 import SettingsSideBar from '../../../component/ui/SettingsSideBar'
 import EFeedJobsRequested from '../../../component/ui/EFeedJobsRequested'
 
@@ -21,5 +18,4 @@ function EJobs () {
   </div>
   )
 }
-
 export default EJobs

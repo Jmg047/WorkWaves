@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import JobRequest from './JobRequest'
+// import JobRequest from './JobRequest'
 
 // * LIBRARY IMPORT
 import axios from 'axios'
@@ -12,7 +12,7 @@ import JobDetails from './JobDetails'
 import FeedCSS from './Feed.module.css'
 
 // TODO: refines pop-up for job details
-// TODO: pop-up remove static data and populate with data from the database 
+// TODO: pop-up remove static data and populate with data from the database
 
 function Feed () {
   const [jobTitles, setJobTitles] = useState([])
@@ -41,21 +41,20 @@ function Feed () {
       description: 'Exciting opportunity for a skilled software engineer...',
       photo: 'path/to/your/photo.jpg'
     }
-    
+
     setSelectedJob(staticJobDetails)
   }
 
   const closeJobDetails = () => {
     setSelectedJob(null)
   }
+  // const openJobRequestModal = () => {
+  //   setShowJobRequestModal(true)
+  // }
 
-  const openJobRequestModal = () => {
-    setShowJobRequestModal(true)
-  }
-
-  const closeJobRequestModal = () => {
-    setShowJobRequestModal(false)
-  }
+  // const closeJobRequestModal = () => {
+  //   setShowJobRequestModal(false)
+  // }
 
   return (
     <div className={FeedCSS.feed}>
