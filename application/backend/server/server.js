@@ -21,7 +21,6 @@ indexRouter.get('*', (req, res) => {
   res.sendFile(path.join(baseDir, 'static/dist/index.html'))
 })
 
-
 app.use('/', indexRouter)
 
 app.use(config.baseUrl, indexRouter)
