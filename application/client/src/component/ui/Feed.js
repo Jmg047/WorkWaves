@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import bartenderJob from './bartenderJob.png'
-import JobDetails from './JobDetails'
-import FeedCSS from './Feed.module.css'
 import JobRequest from './JobRequest'
 
+// * LIBRARY IMPORT
+import axios from 'axios'
+
+// * COMPONENT IMPORT
+import bartenderJob from './bartenderJob.png'
+import JobDetails from './JobDetails'
+
+// * CSS IMPORT
+import FeedCSS from './Feed.module.css'
+
 // TODO: refines pop-up for job details
+// TODO: pop-up remove static data and populate with data from the database 
 
 function Feed () {
   const [jobTitles, setJobTitles] = useState([])
