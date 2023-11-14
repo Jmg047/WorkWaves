@@ -1,71 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 // * LIBRARY IMPORT
-import axios from 'axios'
+
 
 // * COMPONENT IMPORT
-import bartenderJob from './bartenderJob.png'
-import JobDetails from './JobDetails'
+// import bartenderJob from './bartenderJob.png'
 
 // * CSS IMPORT
-import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
+import EFeedRequestsCSS from './EFeedRequests.module.css'
 
 // TODO: modify it to match the UI design
 
-function EFeedJobsRequests () {
-  const [jobTitles, setJobTitles] = useState([])
-  const [selectedJob, setSelectedJob] = useState(null)
-
-  useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
-
-    axios.get(apiUrl)
-      .then(response => {
-        // extract job titles from the response and update the state
-        const titles = response.data.map(job => job.title)
-        setJobTitles(titles)
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error)
-      })
-  }, [])
-
-  const openJobDetails = (job) => {
-    setSelectedJob(job)
-  }
-
-  const closeJobDetails = () => {
-    setSelectedJob(null)
-  }
-
-  // * Currently displaying 2 jobs onn purpose to match UI design
-  // use the slice method to limit the number of job titles to 4
-  const displayedJobTitles = jobTitles.slice(0, 2)
-
+function EFeedRequests () {
   return (
       <div>
-      <h1 className={EFeedJobsRequestedCSS.Title}>Requests</h1>
-      <div className={EFeedJobsRequestedCSS.feed}>
-        {displayedJobTitles.map((job, index) => (
-          <div key={index} className={`${EFeedJobsRequestedCSS.post}`}>
-            <div className={`${EFeedJobsRequestedCSS.item} item-${index + 1}`}>
-              <img src={bartenderJob} alt='Job' width='350' height='170' />
-              <div className={EFeedJobsRequestedCSS.JobTitle}>{job}</div>
-              <div className={EFeedJobsRequestedCSS.jobButtonContainer}>
-                <button onClick={() => openJobDetails(job)} className={EFeedJobsRequestedCSS.JobButton}>Details</button>
-                <button href='/JobRequested' className={EFeedJobsRequestedCSS.JobButton}>Online</button>
-              </div>
-            </div>
-
-          </div>
-        ))}
-          <button className={EFeedJobsRequestedCSS.AddJobButton}>Add a job</button>
-        {selectedJob && (
-          <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
-        )}
+      <h1 className={EFeedRequestsCSS.Title}>Requests</h1>
+      <div className={EFeedRequestsCSS.Feed}>
+        Feed
+        <div className={EFeedRequestsCSS.RequestContainer}>
+          <div className={EFeedRequestsCSS.Photos}>Photos</div>
+          <div className={EFeedRequestsCSS.RequestDetails}>Middle infor</div>
+          <div className={EFeedRequestsCSS.RequestsButtons}>Buttons</div>
+        </div>
       </div>
       </div>
   )
 }
 
-export default EFeedJobsRequests
+export default EFeedRequests

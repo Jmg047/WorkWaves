@@ -1,0 +1,34 @@
+.Title{
+    padding-left: 35px;
+    font-size: 40px;
+  
+    color:white;
+    /* background-color: red; */
+  }
+
+.Feed{
+    width: 150dvh;
+    height: 100dvh;
+    background-color: bisque;
+}
+
+.RequestContainer{
+    display: flex;
+
+    width: 130dvh;
+    height: 30dvh;
+
+    background-color: lightgray;
+}
+
+.Photos {
+
+}
+
+.RequestDetails {
+    
+}
+
+.RequestButtons {
+    
+}
