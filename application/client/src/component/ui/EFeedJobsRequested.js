@@ -12,8 +12,7 @@ import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
 
 // TODO: Remove displayedJobTitles and replace with jobTitles corresponding to the employer
 // TODO: Implement Pop up button to add a job
-// TODO: Online button should be reflecting the status of the post
-// TODO: Refine CSS to match UI design
+// TODO: Online button should be reflecting the status of the posted job (online/offline)
 
 function EFeedJobsRequested () {
   const [jobTitles, setJobTitles] = useState([])
@@ -47,7 +46,7 @@ function EFeedJobsRequested () {
 
   return (
     <div>
-    <h1>SETTINGS</h1>
+    <h1 className={EFeedJobsRequestedCSS.Title}>JOBS</h1>
     <div className={EFeedJobsRequestedCSS.feed}>
       {displayedJobTitles.map((job, index) => (
         <div key={index} className={`${EFeedJobsRequestedCSS.post}`}>
@@ -62,7 +61,7 @@ function EFeedJobsRequested () {
 
         </div>
       ))}
-        <button className={EFeedJobsRequestedCSS.JobButton}>Add a job</button>
+        <button className={EFeedJobsRequestedCSS.AddJobButton}>Add a job</button>
       {selectedJob && (
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
       )}

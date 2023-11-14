@@ -1,3 +1,13 @@
+.Title{
+  padding-left: 35px;
+  font-size: 40px;
+
+  color:white;
+  /* background-color: red; */
+
+
+}
+
 .feed {
     display: flex;
     flex-wrap: wrap; 
@@ -55,6 +65,20 @@
   
   .JobButton {
     border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3.5rem;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  }
+
+  .AddJobButton {
+    border-radius: 8px;
+    margin-left: 27px;
     border-style: none;
     box-sizing: border-box;
     cursor: pointer;

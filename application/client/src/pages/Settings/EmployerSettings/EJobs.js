@@ -1,12 +1,11 @@
 import React from 'react'
 
 // * COMPONENTS IMPORT
-// import CategorySideBar from 'ui/CategorySideBar'
+// import SettingsSideBar from 'ui/SettingsSideBar'
 // import Feed from 'ui/Feed'
 
-import CategorySideBar from '../../../component/ui/CategorySideBar'
+import SettingsSideBar from '../../../component/ui/SettingsSideBar'
 import EFeedJobsRequested from '../../../component/ui/EFeedJobsRequested'
-import SettingsButtons from '../../../component/ui/SettingsButtons'
 
 // * CSS IMPORT
 import EJobsCSS from './EJobs.module.css'
@@ -15,8 +14,7 @@ function EJobs () {
   return (
     <div className={EJobsCSS.Container}>
       <div className={EJobsCSS.itemOne}>
-        <SettingsButtons />
-        <CategorySideBar />
+        <SettingsSideBar />
         </div>
       <div className={EJobsCSS.itemTwo}><EFeedJobsRequested /></div>
       <div className={EJobsCSS.itemThree}></div>
