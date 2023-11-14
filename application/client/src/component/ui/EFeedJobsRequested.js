@@ -14,6 +14,7 @@ import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
 // TODO: Refined pop-up for job details
 // TODO: pop-up remove static data and populate with data from the database 
 // TODO: Online button should be reflecting the status of the posted job (online/offline)
+// TODO: get Employer/Settings buttons to work
 
 function EFeedJobsRequested () {
   const [jobTitles, setJobTitles] = useState([])
