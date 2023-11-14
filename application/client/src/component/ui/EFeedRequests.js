@@ -10,6 +10,8 @@ import JobDetails from './JobDetails'
 // * CSS IMPORT
 import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
 
+// TODO: modify it to match the UI design
+
 function EFeedJobsRequests () {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
