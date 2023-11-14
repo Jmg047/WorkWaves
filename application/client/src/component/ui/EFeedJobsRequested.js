@@ -11,7 +11,7 @@ import JobDetails from './JobDetails'
 import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
 
 // TODO: Remove displayedJobTitles and replace with jobTitles corresponding to the employer
-// TODO: Implement Pop up button to add a job
+// TODO: Refined pop-up for job details
 // TODO: Online button should be reflecting the status of the posted job (online/offline)
 
 function EFeedJobsRequested () {

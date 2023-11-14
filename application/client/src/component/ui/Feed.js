@@ -5,6 +5,8 @@ import JobDetails from './JobDetails'
 import FeedCSS from './Feed.module.css'
 import JobRequest from './JobRequest'
 
+// TODO: refines pop-up for job details
+
 function Feed () {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
