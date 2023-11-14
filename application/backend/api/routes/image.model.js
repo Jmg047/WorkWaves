@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+//schema for uploads
 const ImageSchema = mongoose.Schema( {
     name :{
         type: String,

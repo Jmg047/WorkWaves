@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
-
-// * LIBRARY IMPORT
 import axios from 'axios'
-
-// * COMPONENT IMPORT
 import bartenderJob from './bartenderJob.png'
 import JobDetails from './JobDetails'
-
-// * CSS IMPORT
 import FeedCSS from './Feed.module.css'
+import JobRequest from './JobRequest'
 
 function Feed () {
   const [jobTitles, setJobTitles] = useState([])
@@ -19,7 +14,6 @@ function Feed () {
 
     axios.get(apiUrl)
       .then(response => {
-        // extract job titles from the response and update the state
         const titles = response.data.map(job => job.title)
         setJobTitles(titles)
       })
@@ -29,15 +23,30 @@ function Feed () {
   }, [])
 
   const openJobDetails = (job) => {
-    setSelectedJob(job)
+    // For testing purposes, generate static data
+    const staticJobDetails = {
+      title: 'Software Engineer',
+      where: 'San Francisco, CA',
+      when: 'Full-time',
+      payment: 'Competitive salary',
+      description: 'Exciting opportunity for a skilled software engineer...',
+      photo: 'path/to/your/photo.jpg'
+    }
+    
+    setSelectedJob(staticJobDetails)
   }
 
   const closeJobDetails = () => {
     setSelectedJob(null)
   }
 
-  // use the slice method to limit the number of job titles to 4
-  // const displayedJobTitles = jobTitles.slice(0, 4)
+  const openJobRequestModal = () => {
+    setShowJobRequestModal(true)
+  }
+
+  const closeJobRequestModal = () => {
+    setShowJobRequestModal(false)
+  }
 
   return (
     <div className={FeedCSS.feed}>
