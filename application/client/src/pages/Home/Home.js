@@ -14,9 +14,9 @@ function
 Home () {
   return (
   <div className={HomeCSS.container}>
-      <div className={HomeCSS.itemOne}><CategorySideBar /></div>
-      <div className={HomeCSS.itemTwo}><Feed /></div>
-      <div className={HomeCSS.itemThree}></div>
+      <div><CategorySideBar /></div>
+      <div><Feed /></div>
+      <div></div>
   </div>
   )
 }

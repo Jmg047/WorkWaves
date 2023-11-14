@@ -1,0 +1,73 @@
+.SideBar {
+    width: 250px;
+    border-radius: 10px;
+
+    background-color: rgb(35, 38, 39);
+ }
+ 
+ .Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    height: 40px;
+    font-size: 20px;
+    
+    color: white;
+ }
+
+ .ButtonsContainer {
+   display: flex; 
+   justify-content: center;
+  
+   padding: 10px; 
+   /* border: 1px solid #999;  */
+   border-radius: 5px; 
+
+   /* background-color: #f0f0f0;  */
+ }
+
+.ButtonsContainer > div {
+   padding: 5px 10px; 
+   color: #fff;
+   border-radius: 3px; 
+   border-style: none;
+   box-sizing: border-box;
+   text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+   transition: all .5s;
+   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+   cursor: pointer; 
+   margin: 0 5px; 
+}
+ 
+ .SideBarList {
+    height: auto;
+    padding: 0;
+    background-color: #3e494b;
+ }
+ 
+ .SideBarList .categoryRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+    height: 50px;
+    /* border: 1px solid black; */
+    list-style-type: none;
+    margin: 0%;
+    
+    color: white;
+ 
+    align-items: center;
+ }
+ 
+ .SideBarList .categoryRow:hover{
+    cursor: pointer;
+    background-color: #293846;
+ }
+ 
+ .SideBarList #active{
+    cursor: pointer;
+    background-color: #293846;
+ }

@@ -7,6 +7,7 @@ import NavBar from './component/ui/NavBar'
 import Home from './pages/Home/Home'
 import SignUpForm from './pages/SignUp/SignUpForm.js'
 import LoginForm from './pages/Login/LoginForm.js'
+import EJobs from './pages/Settings/EmployerSettings/EJobs'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginForm />} />
           <Route path='/signup' element={<SignUpForm />} />
+          <Route path='/employer-settings-jobs' element={<EJobs />} />
         </Routes>
       </div>
     </div>
