@@ -3,7 +3,7 @@ export const SettingsSideBarData = [
     title: 'Account',
     link: '/Account'
   },
-  { 
+  {
     title: 'Jobs',
     link: '/employer-settings-jobs'
   },

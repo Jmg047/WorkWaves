@@ -8,6 +8,7 @@ import Home from './pages/Home/Home'
 import SignUpForm from './pages/SignUp/SignUpForm.js'
 import LoginForm from './pages/Login/LoginForm.js'
 import EJobs from './pages/Settings/EmployerSettings/EJobs'
+import ERequests from './pages/Settings/EmployerSettings/ERequests'
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/login' element={<LoginForm />} />
           <Route path='/signup' element={<SignUpForm />} />
           <Route path='/employer-settings-jobs' element={<EJobs />} />
+          <Route path='/employer-settings-requests' element={<ERequests />} />
         </Routes>
       </div>
     </div>

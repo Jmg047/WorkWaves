@@ -1,0 +1,93 @@
+.Title{
+    padding-left: 35px;
+    font-size: 40px;
+  
+    color:white;
+    /* background-color: red; */
+  }
+
+.Feed{
+    width: 150dvh;
+    height: 100dvh;
+    /* background-color: bisque; */
+}
+
+.RequestsContainer{
+    display: flex;
+    justify-content: space-between;
+
+    width: 130dvh;
+    height: 30dvh;
+
+    border: 2px solid #333;
+    margin-left: 32px;
+    padding: 10px;
+    
+
+    background-color: lightgray;
+}
+
+.RequestsPhotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30dvh;
+
+    /* background-color: cadetblue; */
+}
+
+.Photos {
+    border-radius: 10px;
+}
+
+.RequestsDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 30dvh;
+
+    /* background-color: lightpink; */
+}
+
+.RequestsDetails > button {
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3.5rem;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+}
+.IsRequestFor{
+font-size: 30px;
+}
+
+.RequestsButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 30dvh;
+
+    /* background-color: lightgreen; */
+}
+
+.RequestsButtons > button {
+    border-style: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    height: 3.5rem;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+}

@@ -11,8 +11,10 @@ import JobDetails from './JobDetails'
 import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
 
 // TODO: Remove displayedJobTitles and replace with jobTitles corresponding to the employer
-// TODO: Implement Pop up button to add a job
+// TODO: Refined pop-up for job details
+// TODO: pop-up remove static data and populate with data from the database
 // TODO: Online button should be reflecting the status of the posted job (online/offline)
+// TODO: get Employer/Settings buttons to work
 
 function EFeedJobsRequested () {
   const [jobTitles, setJobTitles] = useState([])
@@ -69,5 +71,4 @@ function EFeedJobsRequested () {
     </div>
   )
 }
-
 export default EFeedJobsRequested
