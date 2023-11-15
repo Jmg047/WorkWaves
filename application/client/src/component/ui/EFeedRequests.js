@@ -9,7 +9,7 @@ import ElonMusk from './ElonMusk.png'
 // * CSS IMPORT
 import EFeedRequestsCSS from './EFeedRequests.module.css'
 
-// TODO: modify it to match the UI design
+// TODO: populate right data from DB
 
 function EFeedRequests () {
   return (
@@ -23,9 +23,10 @@ function EFeedRequests () {
           <div className={EFeedRequestsCSS.RequestsDetails}>
             <div className={EFeedRequestsCSS.IsRequestFor}> is requesting for </div>
             <div> Looking for a bartender </div>
-            <button>Details</button>
+            <button>Details</button> // TODO: pop up button details here (Banting)
             </div>
           <div className={EFeedRequestsCSS.RequestsButtons}>
+            // TODO: make accept and decline buttons works
           <button>Accept</button>
           <button>Decline</button>
             </div>
