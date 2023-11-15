@@ -2,7 +2,6 @@ import React from 'react'
 
 // * LIBRARY IMPORT
 
-
 // * COMPONENT IMPORT
 import ElonMusk from './ElonMusk.png'
 
@@ -10,6 +9,8 @@ import ElonMusk from './ElonMusk.png'
 import EFeedRequestsCSS from './EFeedRequests.module.css'
 
 // TODO: populate right data from DB
+// TODO: pop up button details here (Banting)
+// TODO: make accept and decline buttons works
 
 function EFeedRequests () {
   return (
@@ -18,15 +19,15 @@ function EFeedRequests () {
       <div className={EFeedRequestsCSS.Feed}>
         <div className={EFeedRequestsCSS.RequestsContainer}>
           <div className={EFeedRequestsCSS.RequestsPhotos}>
-            <img className= {EFeedRequestsCSS.Photos}src={ElonMusk} alt='Job' width='280' height='220'  />
+            <img className= {EFeedRequestsCSS.Photos}src={ElonMusk} alt='Job' width='280' height='220' />
             </div>
           <div className={EFeedRequestsCSS.RequestsDetails}>
             <div className={EFeedRequestsCSS.IsRequestFor}> is requesting for </div>
             <div> Looking for a bartender </div>
-            <button>Details</button> // TODO: pop up button details here (Banting)
+            <button>Details</button> 
             </div>
           <div className={EFeedRequestsCSS.RequestsButtons}>
-            // TODO: make accept and decline buttons works
+            
           <button>Accept</button>
           <button>Decline</button>
             </div>
