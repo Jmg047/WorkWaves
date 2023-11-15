@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react'
 // * LIBRARY IMPORT
 import axios from 'axios'
 
-
 // * COMPONENTS IMPORT
 // import { CategorySideBarData } from './CategorySideBarData'
 import CategorySideBarCSS from './CategorySideBar.module.css'
@@ -13,26 +12,26 @@ function CategorySideBar () {
 
   useEffect(() => {
     const apiUrl = 'http://localhost:2000/get-gigs?category='
-    
+
     axios.get(apiUrl)
       .then((response) => {
-        console.log('API Response:', response.data);
+        console.log('API Response:', response.data)
         // check if the data is an array before setting the state
         if (Array.isArray(response.data)) {
-          console.log('Setting categories:', response.data.slice(0, 12));
-          setCategories(response.data.slice(0, 12));
+          console.log('Setting categories:', response.data.slice(0, 12))
+          setCategories(response.data.slice(0, 12))
         } else {
-          console.error('API did not return an array:', response.data);
+          console.error('API did not return an array:', response.data)
         }
       })
-      .catch((error) => console.error('Error fetching categories:', error));
-  }, []); 
+      .catch((error) => console.error('Error fetching categories:', error))
+  }, [])
 
   const handleCategoryClick = (category) => {
     //  logic for handling the click event
-    console.log('Clicked on category:', category);
+    console.log('Clicked on category:', category)
     // navigation logic here
-  };
+  }
 
   return (
     <div className={CategorySideBarCSS.SideBar}>
@@ -46,7 +45,7 @@ function CategorySideBar () {
           >
             <div>{category.category}</div>
           </li>
-        ))}
+       ))}
       </ul>
     </div>
   )
