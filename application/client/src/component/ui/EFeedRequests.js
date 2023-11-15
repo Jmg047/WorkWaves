@@ -4,7 +4,7 @@ import React from 'react'
 
 
 // * COMPONENT IMPORT
-// import bartenderJob from './bartenderJob.png'
+import ElonMusk from './ElonMusk.png'
 
 // * CSS IMPORT
 import EFeedRequestsCSS from './EFeedRequests.module.css'
@@ -16,11 +16,19 @@ function EFeedRequests () {
       <div>
       <h1 className={EFeedRequestsCSS.Title}>Requests</h1>
       <div className={EFeedRequestsCSS.Feed}>
-        Feed
-        <div className={EFeedRequestsCSS.RequestContainer}>
-          <div className={EFeedRequestsCSS.Photos}>Photos</div>
-          <div className={EFeedRequestsCSS.RequestDetails}>Middle infor</div>
-          <div className={EFeedRequestsCSS.RequestsButtons}>Buttons</div>
+        <div className={EFeedRequestsCSS.RequestsContainer}>
+          <div className={EFeedRequestsCSS.RequestsPhotos}>
+            <img className= {EFeedRequestsCSS.Photos}src={ElonMusk} alt='Job' width='280' height='220'  />
+            </div>
+          <div className={EFeedRequestsCSS.RequestsDetails}>
+            <div className={EFeedRequestsCSS.IsRequestFor}> is requesting for </div>
+            <div> Looking for a bartender </div>
+            <button>Details</button>
+            </div>
+          <div className={EFeedRequestsCSS.RequestsButtons}>
+          <button>Accept</button>
+          <button>Decline</button>
+            </div>
         </div>
       </div>
       </div>

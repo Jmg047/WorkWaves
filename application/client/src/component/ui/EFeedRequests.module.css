@@ -12,8 +12,9 @@
     background-color: bisque;
 }
 
-.RequestContainer{
+.RequestsContainer{
     display: flex;
+    justify-content: space-between;
 
     width: 130dvh;
     height: 30dvh;
@@ -21,14 +22,44 @@
     background-color: lightgray;
 }
 
+.RequestsPhotos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30dvh;
+
+    background-color: cadetblue;
+}
+
 .Photos {
+    border-radius: 10px;
+}
+
+.RequestsDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 30dvh;
+
+    background-color: lightpink;
+}
+
+.IsRequestFor{
 
 }
 
-.RequestDetails {
+.RequestsButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     
-}
+    width: 30dvh;
 
-.RequestButtons {
-    
+    background-color: lightgreen;
 }
