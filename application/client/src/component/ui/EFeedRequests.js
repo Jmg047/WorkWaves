@@ -24,10 +24,10 @@ function EFeedRequests () {
           <div className={EFeedRequestsCSS.RequestsDetails}>
             <div className={EFeedRequestsCSS.IsRequestFor}> is requesting for </div>
             <div> Looking for a bartender </div>
-            <button>Details</button> 
+            <button>Details</button>
             </div>
           <div className={EFeedRequestsCSS.RequestsButtons}>
-            
+
           <button>Accept</button>
           <button>Decline</button>
             </div>
