@@ -42,6 +42,13 @@ function Feed () {
       photo: 'path/to/your/photo.jpg'
     }
 
+    const openJobRequest = (job) => {
+      const staticJobRequet = {
+
+      
+      }
+    }
+
     setSelectedJob(staticJobDetails)
   }
 
@@ -65,7 +72,7 @@ function Feed () {
             <div className={FeedCSS.JobTitle}>{job}</div>
             <div className={FeedCSS.jobButtonContainer}>
               <button onClick={() => openJobDetails(job)} className={FeedCSS.JobButton}>Details</button>
-              <button href='/JobRequested' className={FeedCSS.JobButton}>Send job request</button>
+              <button onClick={() => openJobRequest(job)} className={FeedCSS.JobButton}>Send job request</button>
             </div>
           </div>
         </div>

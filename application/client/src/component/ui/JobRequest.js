@@ -1,20 +1,19 @@
 import React from 'react'
 import JobRequest from './JobRequest.module.css'
 
-function jobRequest ({ onClose }) {
+function JobRequest ({ onClose }) {
   const handleSendRequest = () => {
-    // Add logic to handle sending the job request
-    // You can include form data and any necessary API calls here
-    // For simplicity, we're just closing the modal in this example
     onClose()
   }
 
   return (
-    <div className={FeedCSS.modal}>
-      <div className={FeedCSS.modalContent}>
+    <div className={JobRequestCSS.popup}>
+      <div className={JobRequestCSS.popup}>
         <span className={FeedCSS.close} onClick={onClose}>&times;</span>
         <h2>Job Request Form</h2>
-        {/* Add your job request form content here */}
+        <p className={JobDetailsCSS.detailsItem}><strong>Where:</strong> {jobDetails.where}</p>
+        <p className={JobDetailsCSS.detailsItem}><strong>When:</strong> {jobDetails.when}</p>
+        <p className={JobDetailsCSS.detailsItem}><strong>Payment:</strong> {jobDetails.payment}</p>
         <button onClick={handleSendRequest}>Send Request</button>
       </div>
     </div>
@@ -22,3 +21,26 @@ function jobRequest ({ onClose }) {
 }
 
 export default JobRequest
+
+
+// {/* <div className={JobDetailsCSS.popup}>
+// <div className={JobDetailsCSS.popupContent}>
+//   <div className={JobDetailsCSS.photoSection}>
+//     {jobDetails.photo && (
+//       <img src={jobDetails.photo} alt={jobDetails.title} className={JobDetailsCSS.jobPhoto} />
+//     )}
+//   </div>
+//   <h2 className={JobDetailsCSS.title}><strong>Title: </strong>{jobDetails.title}</h2>
+//   <p className={JobDetailsCSS.detailsItem}><strong>Where:</strong> {jobDetails.where}</p>
+//   <p className={JobDetailsCSS.detailsItem}><strong>When:</strong> {jobDetails.when}</p>
+//   <p className={JobDetailsCSS.detailsItem}><strong>Payment:</strong> {jobDetails.payment}</p>
+//   <div className={JobDetailsCSS.infoSection}>
+//     <p className={JobDetailsCSS.description}>{jobDetails.description}</p>
+//   </div>
+//   <div className={JobDetailsCSS.buttonContainer}>
+//     <button /* </div>onClick={fill it in} */ className={JobDetailsCSS.previewButton}>Preview</button>
+//     <button /* </div>onClick={fill it in} */ className={JobDetailsCSS.addButton}>Add Job</button>
+//   </div>
+//   <button onClick={onClose} className={JobDetailsCSS.closeButton}>Close</button>
+// </div>
+// </div> */}
