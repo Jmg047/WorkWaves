@@ -1,5 +1,5 @@
 import React from 'react'
-import JobRequest from './JobRequest.module.css'
+import JobRequestCSS from './JobRequest.module.css'
 
 function JobRequest ({ onClose }) {
   const handleSendRequest = () => {
@@ -11,9 +11,9 @@ function JobRequest ({ onClose }) {
       <div className={JobRequestCSS.popup}>
         <span className={FeedCSS.close} onClick={onClose}>&times;</span>
         <h2>Job Request Form</h2>
-        <p className={JobDetailsCSS.detailsItem}><strong>Where:</strong> {jobDetails.where}</p>
-        <p className={JobDetailsCSS.detailsItem}><strong>When:</strong> {jobDetails.when}</p>
-        <p className={JobDetailsCSS.detailsItem}><strong>Payment:</strong> {jobDetails.payment}</p>
+        <p className={JobRequestCSS.RequestItem}><strong>Where:</strong> {JobRequest.where}</p>
+        <p className={JobRequestCSS.RequestItem}><strong>When:</strong> {JobRequest.when}</p>
+        <p className={JobRequestCSS.RequestItem}><strong>Payment:</strong> {JobRequest.payment}</p>
         <button onClick={handleSendRequest}>Send Request</button>
       </div>
     </div>
