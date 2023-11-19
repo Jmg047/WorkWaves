@@ -1,28 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import bartenderJob from './bartenderJob.png';
-import JobDetails from './JobDetails';
-import JobRequest from './JobRequest';  // Import the JobRequest component
-import FeedCSS from './Feed.module.css';
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import bartenderJob from './bartenderJob.png'
+import JobDetails from './JobDetails'
+import JobRequest from './JobRequest'
+import FeedCSS from './Feed.module.css'
 
-function Feed() {
-  const [jobTitles, setJobTitles] = useState([]);
-  const [selectedJob, setSelectedJob] = useState(null);
-  const [showJobRequestModal, setShowJobRequestModal] = useState(false);
+function Feed () {
+  const [jobTitles, setJobTitles] = useState([])
+  const [selectedJob, setSelectedJob] = useState(null)
+  const [showJobRequestModal, setShowJobRequestModal] = useState(false)
+  const [selectedJobForRequest, setSelectedJobForRequest] = useState(null)
+  const [selectedJobRequestData, setSelectedJobRequestData] = useState(null)
 
   useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs';
+    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
 
     axios.get(apiUrl)
       .then(response => {
-        const titles = response.data.map(job => job.title);
-        setJobTitles(titles);
+        const titles = response.data.map(job => job.title)
+        setJobTitles(titles)
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+        console.error('Error fetching data:', error)
+      })
+  }, [])
 
+
+    /*TODO: Sample job request data "static must end up using 
+    a data scruture or something to pull data from BE"*/
   const openJobDetails = (job) => {
     const staticJobDetails = {
       title: 'Software Engineer',
@@ -31,22 +36,37 @@ function Feed() {
       payment: 'Competitive salary',
       description: 'Exciting opportunity for a skilled software engineer...',
       photo: 'path/to/your/photo.jpg'
-    };
+    }
 
-    setSelectedJob(staticJobDetails);
-  };
+    setSelectedJob(staticJobDetails)
+  }
 
   const closeJobDetails = () => {
-    setSelectedJob(null);
-  };
+    setSelectedJob(null)
+  }
 
-  const openJobRequestModal = () => {
-    setShowJobRequestModal(true);
-  };
+  const openJobRequestModal = (job) => {
+    setShowJobRequestModal(true)
+
+
+    /*TODO: Sample job request data "static must end up using 
+    a data scruture or something to pull data from BE"*/
+    const sampleJobRequestData = {
+      where: 'Sf',
+      when: 'Flexible schedule',
+      payment: 'Hourly rate $25'
+    
+    }
+
+    setSelectedJobForRequest(job)
+    setSelectedJobRequestData(sampleJobRequestData)
+  }
 
   const closeJobRequestModal = () => {
-    setShowJobRequestModal(false);
-  };
+    setShowJobRequestModal(false)
+    setSelectedJobForRequest(null)
+    setSelectedJobRequestData(null)
+  }
 
   return (
     <div className={FeedCSS.feed}>
@@ -65,11 +85,11 @@ function Feed() {
       {selectedJob && (
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
       )}
-      {showJobRequestModal && (
-        <JobRequest onClose={closeJobRequestModal} />
+      {showJobRequestModal && selectedJobForRequest && selectedJobRequestData && (
+        <JobRequest jobRequestData={selectedJobRequestData} onClose={closeJobRequestModal} />
       )}
     </div>
-  );
+  )
 }
 
-export default Feed;
+export default Feed

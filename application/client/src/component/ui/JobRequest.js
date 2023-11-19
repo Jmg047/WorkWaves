@@ -1,46 +1,32 @@
 import React from 'react'
 import JobRequestCSS from './JobRequest.module.css'
 
-function JobRequest ({ onClose }) {
+function JobRequest ({ jobRequestData, onClose }) {
+  const { where, when, payment } = jobRequestData
+
   const handleSendRequest = () => {
+    // Handle sending the request logic here
     onClose()
   }
 
+
+  //popup looks like the details one just fill in data in the return
   return (
     <div className={JobRequestCSS.popup}>
-      <div className={JobRequestCSS.popup}>
-        <span className={FeedCSS.close} onClick={onClose}>&times;</span>
+      <div className={JobRequestCSS.popupContent}>
+        <span className={JobRequestCSS.closeButton} onClick={onClose}>&times;</span>
         <h2>Job Request Form</h2>
-        <p className={JobRequestCSS.RequestItem}><strong>Where:</strong> {JobRequest.where}</p>
-        <p className={JobRequestCSS.RequestItem}><strong>When:</strong> {JobRequest.when}</p>
-        <p className={JobRequestCSS.RequestItem}><strong>Payment:</strong> {JobRequest.payment}</p>
-        <button onClick={handleSendRequest}>Send Request</button>
+        <div className={JobRequestCSS.infoSection}>
+          <p className={JobRequestCSS.detailsItem}><strong>Where:</strong> {where}</p>
+          <p className={JobRequestCSS.detailsItem}><strong>When:</strong> {when}</p>
+          <p className={JobRequestCSS.detailsItem}><strong>Payment:</strong> {payment}</p>
+        </div>
+        <div className={JobRequestCSS.buttonContainer}>
+          <button onClick={handleSendRequest}>Send Request</button>
+        </div>
       </div>
     </div>
   )
 }
 
 export default JobRequest
-
-
-// {/* <div className={JobDetailsCSS.popup}>
-// <div className={JobDetailsCSS.popupContent}>
-//   <div className={JobDetailsCSS.photoSection}>
-//     {jobDetails.photo && (
-//       <img src={jobDetails.photo} alt={jobDetails.title} className={JobDetailsCSS.jobPhoto} />
-//     )}
-//   </div>
-//   <h2 className={JobDetailsCSS.title}><strong>Title: </strong>{jobDetails.title}</h2>
-//   <p className={JobDetailsCSS.detailsItem}><strong>Where:</strong> {jobDetails.where}</p>
-//   <p className={JobDetailsCSS.detailsItem}><strong>When:</strong> {jobDetails.when}</p>
-//   <p className={JobDetailsCSS.detailsItem}><strong>Payment:</strong> {jobDetails.payment}</p>
-//   <div className={JobDetailsCSS.infoSection}>
-//     <p className={JobDetailsCSS.description}>{jobDetails.description}</p>
-//   </div>
-//   <div className={JobDetailsCSS.buttonContainer}>
-//     <button /* </div>onClick={fill it in} */ className={JobDetailsCSS.previewButton}>Preview</button>
-//     <button /* </div>onClick={fill it in} */ className={JobDetailsCSS.addButton}>Add Job</button>
-//   </div>
-//   <button onClick={onClose} className={JobDetailsCSS.closeButton}>Close</button>
-// </div>
-// </div> */}
