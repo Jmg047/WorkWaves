@@ -3,17 +3,18 @@ import React, { useState, useEffect } from 'react'
 // * LIBRARY IMPORT
 import axios from 'axios'
 
-// * COMPONENTS IMPORT
-// import { CategorySideBarData } from './CategorySideBarData'
+// * CSS IMPORT
+
 import CategorySideBarCSS from './CategorySideBar.module.css'
 
-function CategorySideBar () {
+function CategorySideBar ({ updateCategory }) {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:2000/get-gigs?category='
+    const apiUrl = 'http://localhost:2000/get-gigs'
 
-    axios.get(apiUrl)
+    axios
+      .get(apiUrl)
       .then((response) => {
         console.log('API Response:', response.data)
         // check if the data is an array before setting the state
@@ -27,10 +28,25 @@ function CategorySideBar () {
       .catch((error) => console.error('Error fetching categories:', error))
   }, [])
 
+  const fetchPostsByCategory = (category) => {
+    const apiUrl = `http://localhost:2000/get-gigs?category=${category}`
+
+    axios
+      .get(apiUrl)
+      .then((response) => {
+        console.log('API Response for category:', category, response.data)
+        // Send the fetched posts to the parent component
+        // (updatePosts is a function passed from the parent component)
+        updatePosts(response.data)
+      })
+      .catch((error) => console.error('Error fetching posts:', error))
+  }
+
   const handleCategoryClick = (category) => {
-    //  logic for handling the click event
+    // logic for handling the click event
     console.log('Clicked on category:', category)
-    // navigation logic here
+    updateCategory(category); // Update the selected category in the parent component
+    // navigation logic or further state updates here if needed
   }
 
   return (
@@ -50,5 +66,4 @@ function CategorySideBar () {
     </div>
   )
 }
-
 export default CategorySideBar

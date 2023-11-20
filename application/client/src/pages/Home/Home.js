@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // * COMPONENTS IMPORT
 // import CategorySideBar from 'ui/CategorySideBar'
@@ -10,12 +10,18 @@ import Feed from '../../component/ui/Feed'
 // * CSS IMPORT
 import HomeCSS from './Home.module.css'
 
-function
-Home () {
+function Home () {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const updateCategory = (category) => {
+    setSelectedCategory(category);
+  };
+
   return (
   <div className={HomeCSS.container}>
-      <div><CategorySideBar /></div>
-      <div><Feed /></div>
+     <div><CategorySideBar updateCategory={updateCategory} /></div>
+      {/* Pass the selectedCategory to the Feed component */}
+      <div><Feed selectedCategory={selectedCategory} /></div>
       <div></div>
   </div>
   )
