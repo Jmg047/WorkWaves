@@ -28,25 +28,12 @@ function CategorySideBar ({ updateCategory }) {
       .catch((error) => console.error('Error fetching categories:', error))
   }, [])
 
-  const fetchPostsByCategory = (category) => {
-    const apiUrl = `http://localhost:2000/get-gigs?category=${category}`
 
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        console.log('API Response for category:', category, response.data)
-        // Send the fetched posts to the parent component
-        // (updatePosts is a function passed from the parent component)
-        updatePosts(response.data)
-      })
-      .catch((error) => console.error('Error fetching posts:', error))
-  }
 
   const handleCategoryClick = (category) => {
     // logic for handling the click event
     console.log('Clicked on category:', category)
-    updateCategory(category); // Update the selected category in the parent component
-    // navigation logic or further state updates here if needed
+    updateCategory(category) // update the selected category in the parent component
   }
 
   return (

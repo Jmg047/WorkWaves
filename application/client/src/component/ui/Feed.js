@@ -19,8 +19,11 @@ function Feed ({ selectedCategory }) {
   const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    const apiUrl = `https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?category=${selectedCategory}`
+    let apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
 
+    if (selectedCategory) {
+      apiUrl = `https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?category=${selectedCategory}`
+    }
     axios.get(apiUrl)
       .then(response => {
         const titles = response.data.map(job => job.title)
