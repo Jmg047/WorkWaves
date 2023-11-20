@@ -14,13 +14,16 @@ import FeedCSS from './Feed.module.css'
 // TODO: refines pop-up for job details
 // TODO: pop-up remove static data and populate with data from the database
 
-function Feed () {
+function Feed ({ selectedCategory }) {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
+    let apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
 
+    if (selectedCategory) {
+      apiUrl = `https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?category=${selectedCategory}`
+    }
     axios.get(apiUrl)
       .then(response => {
         const titles = response.data.map(job => job.title)
@@ -29,7 +32,7 @@ function Feed () {
       .catch(error => {
         console.error('Error fetching data:', error)
       })
-  }, [])
+  }, [selectedCategory])
 
   const openJobDetails = (job) => {
     // For testing purposes, generate static data
@@ -48,13 +51,6 @@ function Feed () {
   const closeJobDetails = () => {
     setSelectedJob(null)
   }
-  // const openJobRequestModal = () => {
-  //   setShowJobRequestModal(true)
-  // }
-
-  // const closeJobRequestModal = () => {
-  //   setShowJobRequestModal(false)
-  // }
 
   return (
     <div className={FeedCSS.feed}>
