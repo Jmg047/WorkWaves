@@ -28,8 +28,6 @@ function CategorySideBar ({ updateCategory }) {
       .catch((error) => console.error('Error fetching categories:', error))
   }, [])
 
-
-
   const handleCategoryClick = (category) => {
     // logic for handling the click event
     console.log('Clicked on category:', category)
