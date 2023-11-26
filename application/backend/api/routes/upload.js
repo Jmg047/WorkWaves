@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 
 // MongoDB URI - Replace with your environment variable or secure store method
-const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/demo'
+const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/gigs'
 mongoose.connect(mongoURI).then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err))
 // Set up storage using multer
@@ -16,7 +16,8 @@ const storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     // Use Date.now() for uniqueness along with the original name
-    cb(null, Date.now() + '-' + file.originalname)
+    //const gigName = req.body.name.replace(/\s+/g, '_') || ''
+    cb(null,  `${Date.now()}_${file.originalname}`)
   }
 })
 //h
@@ -29,22 +30,26 @@ const router = express.Router()
 
 // POST endpoint for image upload
 router.post('/', upload.single('testImage'), async (req, res) => {
-  if (!req.file) {
-    return res.status(400).send('No file uploaded.')
-  }
-
-  // Create a new image model instance and populate the data
-  const newImage = new ImageModel({
-    name: req.body.name,
-    image: {
-      data: req.file.filename, // Saving just the filename might be sufficient if you construct the path when accessing
-      contentType: req.file.mimetype
-    }
-  })
-
-  // Save the image to the database
   try {
-    await newImage.save()
+    // Handle text fields (title, location, etc.)
+    let title = req.body.title
+    let testImage = req.file
+    // Ensure that at least title and testImage are provided
+    if (!title || !testImage) {
+      return res.status(400).json({ error: 'Title and image are required' , title, testImage});
+    }
+
+    // Handle the image file
+    const newImage = new ImageModel({
+      name: title,
+      image: {
+        data: req.file.filename,
+        contentType: req.file.mimetype,
+      },
+    });
+
+    // Save the image to the database
+    await newImage.save();
     res.status(201).send('Successfully uploaded')
   } catch (err) {
     res.status(500).send(err.message)

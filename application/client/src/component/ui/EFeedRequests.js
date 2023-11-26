@@ -27,6 +27,7 @@ function EFeedRequests () {
             <button>Details</button>
             </div>
           <div className={EFeedRequestsCSS.RequestsButtons}>
+
           <button>Accept</button>
           <button>Decline</button>
             </div>
