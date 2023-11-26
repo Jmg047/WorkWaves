@@ -1,6 +1,9 @@
 import React from 'react'
 import AddJobCSS from './AddJob.module.css'
 
+// TODO: Remove displayedJobTitles and replace with jobTitles corresponding to the employer
+// TODO: modify to the user to input the job information
+
 function AddJob ({ addJob, onClose }) {
   console.log('AddJob props:', addJob, onClose)
   // check if addJob is null or undefined
