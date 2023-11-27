@@ -26,6 +26,12 @@
     justify-content: space-between;
   }
   
+  .InputContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
   
   h2 {
     font-size: 24px;
@@ -51,8 +57,7 @@
   
   .buttonContainer {
     display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
+    justify-content: center;
   }
   
   .closeButton {
@@ -92,13 +97,18 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-right: 10px;
+    
   }
   
   .infoSection {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
     padding: 10px;
     margin-bottom: 15px;
+
+    /* background-color: #0056b3; */
   }
   
   .description {

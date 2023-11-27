@@ -36,10 +36,10 @@ function AddJob ({ onClose }) {
             <img src={addJob.photo} alt={"test"} className={AddJobCSS.jobPhoto} />
           )}
         </div> */}
-      <div>
-      <h3 className={AddJobCSS.title}>
+      <div className={AddJobCSS.InputContainer}>
+        <h3 className={AddJobCSS.title}>
                   <strong>Title:</strong>
-              </h3>
+        </h3>
               <input
               type='text'
               name='title'
@@ -49,7 +49,7 @@ function AddJob ({ onClose }) {
               />
       </div>
 
-      <div>
+      <div className={AddJobCSS.InputContainer}>
         <h3 className={AddJobCSS.title}>
                   <strong>When:</strong>
         </h3>
@@ -62,7 +62,7 @@ function AddJob ({ onClose }) {
             />
       </div>
 
-      <div>
+      <div className={AddJobCSS.InputContainer}>
         <h3 className={AddJobCSS.title}>
                   <strong>When:</strong>
         </h3>
