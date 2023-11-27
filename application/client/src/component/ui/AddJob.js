@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
+
+// * LIBRARY IMPORT
+import axios from 'axios'
+
+
 import AddJobCSS from './AddJob.module.css'
 
 // TODO: Remove displayedJobTitles and replace with jobTitles corresponding to the employer
-// TODO: modify to the user to input the job information
+// TODO: refined the styling of the modal to perfection 
+// TODO: add the upload photo functionality
+// TODO: fix the submission of data to the database
 
 function AddJob ({ onClose }) {
   const [jobData, setJobData] = useState({
@@ -15,17 +22,23 @@ function AddJob ({ onClose }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target
+    console.log('Input changed:', name, value); // logging input changes
     setJobData((prevData) => ({
       ...prevData,
       [name]: value
     }))
   }
 
-  const handleSubmit = () => {
-    // handle the submission of jobData (e.g., send it to an API)
-    // reset the form or close the modal after submission
+  const handleSubmit = async () => {
     console.log('Submitting job data:', jobData)
-    onClose()
+    try {
+      const response = await axios.post('https://workwaves-jm2b5.ondigitalocean.app/api/create-gig', jobData);
+      console.log('Job added successfully:', response.data);
+      onClose(); // close the pop up after successful submission
+    } catch (error) {
+      console.error('Error adding job:', error);
+      onClose();
+    }
   }
 
   return (
@@ -69,9 +82,9 @@ function AddJob ({ onClose }) {
             <input
               type='text'
               name='payment'
-              // value={jobData.payment}
+              value={jobData.payment}
               placeholder='payment'
-              // onChange={handleChange}
+              onChange={handleChange}
             />
       </div>
 
@@ -81,9 +94,9 @@ function AddJob ({ onClose }) {
         </h3>
         <textarea
               name='description'
-              // value={jobData.description}
+              value={jobData.description}
               placeholder='description'
-              // onChange={handleChange}
+              onChange={handleChange}
             />
         </div>
         <div className={AddJobCSS.buttonContainer}>
