@@ -1,4 +1,4 @@
-import { gigToBeGotten } from '../__mocks__/gigsData'
+import { gigToBeGotten, gigToBeExpected } from '../__mocks__/gigsData'
 const request = require('supertest')
 const baseURL = 'http://localhost:2000'
 
@@ -12,15 +12,6 @@ describe('GET /get-gigs', () => {
 
   it('should return gigs', async () => {
     const response = await request(baseURL).get(`/get-gigs?title=${gig.title}`)
-    expect(response.body).toStrictEqual(
-      [{
-        _id: '65260fe575d0d9b0acb7219f',
-        title: 'Network Security Specialist',
-        description: 'Specialize in ensuring the security of computer networks for businesses.',
-        location: 'Dallas, TX',
-        payment: [ 'Cash', 'Venmo', 'PayPal' ],
-        category: 'computer'
-      }]
-    )
+    expect(response.body).toStrictEqual( gigToBeExpected )
   })
 })
