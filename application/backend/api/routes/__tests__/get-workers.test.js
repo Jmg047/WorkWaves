@@ -10,7 +10,7 @@ describe('GET /get-workers', () => {
     expect(response.statusCode).toBe(200)
   })
 
-  it('should return gigs', async () => {
+  it('should return user', async () => {
     const response = await request(baseURL).get(`/get-workers?FirstName=${user.FirstName}`)
     expect(response.body).toStrictEqual( expectedUser )
   })
