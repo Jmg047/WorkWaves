@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
       const location = req.query.location
       const payment = [ req.query.payment ]
       const category = req.query.category
-      const testImage = req.file
+      //const testImage = req.file
 
       if (!title || !description || !location || !payment) {
         return res.status(400).json({ error: 'All fields (title, description, location, payment) are required' })
@@ -32,14 +32,6 @@ router.post('/', async (req, res) => {
         return res.status(400).json({ error: 'Duplicate entry already exists' })
       }
 
-       // Make a request to /uploads to upload the image and get the processed image data
-       const uploadResponse = await axios.post('http://localhost:2000/upload', {
-        title: title, // Pass the gig name for the image filename
-        testImage: testImage // Pass the image data (assuming 'testImage' is the field name for image data)
-    })
-
-    // Use the processed image data from the response
-    const uploadedImage = uploadResponse.data
   
       const newGig = {
         title: title,
@@ -47,7 +39,7 @@ router.post('/', async (req, res) => {
         location: location,
         payment: payment,
         category: category,
-        image: uploadedImage
+        //image:
       }
   
       const result = await collection.insertOne(newGig)
