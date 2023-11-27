@@ -1,41 +1,93 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AddJobCSS from './AddJob.module.css'
 
 // TODO: Remove displayedJobTitles and replace with jobTitles corresponding to the employer
 // TODO: modify to the user to input the job information
 
-function AddJob ({ addJob, onClose }) {
-  console.log('AddJob props:', addJob, onClose)
-  // check if addJob is null or undefined
-  if (!addJob) {
-    return null // or display an error message
+function AddJob ({ onClose }) {
+  const [jobData, setJobData] = useState({
+    title: '',
+    where: '',
+    when: '',
+    payment: '',
+    description: ''
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setJobData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }))
   }
 
-  // event handler for the "Add Job" button
-  const handleAddJob = () => {
-    console.log('Add Job button clicked!')
-    //  logic for adding the job
-    //  handle the action of adding the job
-    //  call an API
+  const handleSubmit = () => {
+    // handle the submission of jobData (e.g., send it to an API)
+    // reset the form or close the modal after submission
+    console.log('Submitting job data:', jobData)
+    onClose()
   }
 
   return (
     <div className={AddJobCSS.popup}>
       <div className={AddJobCSS.popupContent}>
-        <div className={AddJobCSS.photoSection}>
+        {/* <div className={AddJobCSS.photoSection}>
           {addJob.photo && (
-            <img src={addJob.photo} alt={addJob.title} className={AddJobCSS.jobPhoto} />
+            <img src={addJob.photo} alt={"test"} className={AddJobCSS.jobPhoto} />
           )}
-        </div>
-        <h2 className={AddJobCSS.title}><strong>Title: </strong>{addJob.title}</h2>
-        <p className={AddJobCSS.detailsItem}><strong>Where:</strong> {addJob.where}</p>
-        <p className={AddJobCSS.detailsItem}><strong>When:</strong> {addJob.when}</p>
-        <p className={AddJobCSS.detailsItem}><strong>Payment:</strong> {addJob.payment}</p>
+        </div> */}
+      <div>
+      <h3 className={AddJobCSS.title}>
+                  <strong>Title:</strong>
+              </h3>
+              <input
+              type='text'
+              name='title'
+                value={jobData.title}
+              placeholder='Title'
+                onChange={handleChange}
+              />
+      </div>
+
+      <div>
+        <h3 className={AddJobCSS.title}>
+                  <strong>When:</strong>
+        </h3>
+            <input
+              type='text'
+              name='when'
+              value={jobData.when}
+              placeholder='When'
+              onChange={handleChange}
+            />
+      </div>
+
+      <div>
+        <h3 className={AddJobCSS.title}>
+                  <strong>When:</strong>
+        </h3>
+            <input
+              type='text'
+              name='payment'
+              // value={jobData.payment}
+              placeholder='payment'
+              // onChange={handleChange}
+            />
+      </div>
+
         <div className={AddJobCSS.infoSection}>
-          <p className={AddJobCSS.description}>{addJob.description}</p>
+        <h3 className={AddJobCSS.title}>
+                  <strong>Description:</strong>
+        </h3>
+        <textarea
+              name='description'
+              // value={jobData.description}
+              placeholder='description'
+              // onChange={handleChange}
+            />
         </div>
         <div className={AddJobCSS.buttonContainer}>
-          <button onClick={handleAddJob} className={AddJobCSS.addButton}>Add Job</button>
+          <button onClick={handleSubmit} className={AddJobCSS.addButton}>Add Job</button>
         </div>
         <button onClick={onClose} className={AddJobCSS.closeButton}>Close</button>
       </div>

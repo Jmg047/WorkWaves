@@ -22,16 +22,14 @@ const defaultAddJobData = {
   where: 'Location',
   when: 'Date',
   payment: ' Payment',
-  description: 'Description',
+  description: 'Description'
 }
 
-
 function EFeedJobsRequested () {
-  const [jobTitles, setJobTitles] = useState([]);
-  const [showAddJobPopup, setShowAddJobPopup] = useState(false);
-  const [addJobData, setAddJobData] = useState(null); // State for addJobData
-  const [selectedJob, setSelectedJob] = useState(null);
-
+  const [jobTitles, setJobTitles] = useState([])
+  const [showAddJobPopup, setShowAddJobPopup] = useState(false)
+  const [addJobData, setAddJobData] = useState(null) // State for addJobData
+  const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
     const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
@@ -47,12 +45,9 @@ function EFeedJobsRequested () {
       })
 
     // Simulating fetched data or default data assignment
-    const fetchedAddJobData = { ...defaultAddJobData }; // Using default data for simulation
-    setAddJobData(fetchedAddJobData);
-
+    const fetchedAddJobData = { ...defaultAddJobData } // Using default data for simulation
+    setAddJobData(fetchedAddJobData)
   }, [])
-
-  
 
   const openJobDetails = (job) => {
     setSelectedJob(job)
