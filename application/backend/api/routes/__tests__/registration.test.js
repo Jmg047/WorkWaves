@@ -1,4 +1,4 @@
-import { userToRegister, expectedOutputRegistration } from '../__mocks__/userData'
+import { userToRegister } from '../__mocks__/userData'
 const request = require('supertest')
 const baseURL = 'http://localhost:2000'
 
