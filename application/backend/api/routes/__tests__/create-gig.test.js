@@ -4,12 +4,14 @@ const baseURL = 'http://localhost:2000'
 
 describe('POST /create-gig', () => {
   const gig = gigToBeCreated
-  const query = `title=${gig.title}&description=${gig.description}&location=${gig.location}&payment=${gig.payment}&category=${gig.category}`
+  const query =
+  `title=${gig.title}&description=${gig.description}&location=${gig.location}&payment=${gig.payment}&category=${gig.category}`
 
-  afterAll(async () => {
-    await request(baseURL).delete(`/create-gig?title=${query}`)
+  it('should return 400', async () => {
+    const response = await request(baseURL).post(`/create-gig`)
+    expect(response.statusCode).toBe(400)
   })
-  it('should return gigs', async () => {
+  it('should return gig created successfully', async () => {
     const response = await request(baseURL).post(`/create-gig?${query}`)
     expect(response.statusCode).toBe(201)
   })

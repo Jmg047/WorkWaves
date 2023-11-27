@@ -23,15 +23,3 @@ export const expectedOutputLogin =
         isRegistered: true
     }
 }
-
-/*export const expectedOutputRegistration =
-{
-    message: 'User registered successfully',
-    newUser: {
-        'Username': 'abc2',
-        'Password': 'abc2password',
-        'Email': 'abc2@email.com',
-        'Type': 'Worker',
-        'isRegistered': true,
-    }
-}*/
