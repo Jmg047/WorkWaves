@@ -2,11 +2,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 const path = require('path')
+const indexRouter = express.Router()
+
 const config = {
   baseUrl: '/'
 }
-
-const indexRouter = express.Router()
 
 const baseDir = path.dirname(path.dirname(__dirname)) // Removes two levels of the path
 
