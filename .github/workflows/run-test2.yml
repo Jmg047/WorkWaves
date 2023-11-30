@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [19.8.1]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2 # bring the code from the repo to the container (current working directory)
