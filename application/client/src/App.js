@@ -2,7 +2,7 @@ import React from 'react'
 import AppCSS from './App.module.css'
 import { Route, Routes } from 'react-router-dom'
 
-// * COMPONENTS IMPORTS // tets
+// * COMPONENTS IMPORTS
 import NavBar from './component/ui/NavBar'
 import Home from './pages/Home/Home'
 import SignUpForm from './pages/SignUp/SignUpForm.js'
