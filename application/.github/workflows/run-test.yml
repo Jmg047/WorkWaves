@@ -26,7 +26,7 @@ jobs:
         run: yarn
 
       - name: Run tests
-        run: yarn test ../backend/api/routes/__tests__/login.test.js # run the tests
+        run: yarn test # run the tests
 
       - name: Build the project
         run: yarn build # build the project
