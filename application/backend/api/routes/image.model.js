@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+
 //schema for uploads
 const ImageSchema = mongoose.Schema( {
     name :{
@@ -11,4 +12,5 @@ const ImageSchema = mongoose.Schema( {
     }
 
 })
+
 module.exports = ImageModel = mongoose.model('imageModel',ImageSchema)

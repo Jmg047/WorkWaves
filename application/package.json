@@ -4,7 +4,7 @@
   "description": "CSC648 group project",
   "main": "./server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "./node_modules/.bin/eslint --config .eslintrc.json",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
@@ -59,7 +59,9 @@
     "eslint-webpack-plugin": "^4.0.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "jest": "^29.7.0",
     "nodemon": "^3.0.1",
+    "supertest": "^6.3.3",
     "webpack": "^5.88.2"
   }
 }

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, 'client', 'src', 'index.js'), // Adjust the entry path
+  entry: path.join(__dirname, 'client', 'src', 'index.js'),
   output: {
     publicPath: '/dist/',
     path: path.resolve(__dirname, 'static', 'dist'),
@@ -42,7 +42,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'client', 'src', 'index.html'), // Adjust the template path
+      template: path.join(__dirname, 'client', 'src', 'index.html'),
       inject: 'body',
     }),
     new ESLintPlugin(),
