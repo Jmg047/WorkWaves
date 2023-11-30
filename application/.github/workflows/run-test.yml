@@ -1,0 +1,35 @@
+name: Run WorkWaves Test
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [19.8.1]
+
+    steps:
+      - uses: actions/checkout@v2 # bring the code from the repo to the container (current working directory)
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1 # setup node
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run tests
+        run: yarn test ../backend/api/routes/__tests__/login.test.js # run the tests
+
+      - name: Build the project
+        run: yarn build # build the project
+
+
+        # use act: https://github.com/nektos/act to test locally (optimal and optional)
