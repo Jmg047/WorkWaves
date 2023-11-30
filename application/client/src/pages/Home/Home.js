@@ -7,8 +7,10 @@ import React, { useState } from 'react'
 import CategorySideBar from '../../component/ui/CategorySideBar'
 import Feed from '../../component/ui/Feed'
 
-// * CSS IMPORT
+// * CSS IMPORT 
 import HomeCSS from './Home.module.css'
+
+// * burner comments 
 
 function Home () {
   const [selectedCategory, setSelectedCategory] = useState(null)
