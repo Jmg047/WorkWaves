@@ -4,7 +4,7 @@ const baseURL = 'http://localhost:2000'
 
 describe('DELETE /delete-account', () => {
   const accountToBeDeleted = userToRegister
-  const query = `username=${accountToBeDeleted.username}`
+  const query = `Username=${accountToBeDeleted.username}`
 
   it('should return account deleted successfully', async () => {
     const response = await request(baseURL).delete(`/delete-account?${query}`)
