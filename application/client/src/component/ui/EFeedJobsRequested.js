@@ -10,6 +10,8 @@ import JobDetails from './JobDetails'
 // * CSS IMPORT
 import EFeedJobsRequestedCSS from './EFeedJobsRequested.module.css'
 
+// TODO: populate the "when" field in the job details pop-up -- waiting on Jaime to make the fielkd in the DB
+
 function EFeedJobsRequested () {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
