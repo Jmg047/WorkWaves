@@ -69,9 +69,6 @@ function EFeedJobsRequested () {
         {selectedJob && (
           <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
         )}
-        {showSendJobRequest && (
-        <SendJobRequest onClose={closeSendJobRequest} />
-      )}
       </div>
     </div>
   )
