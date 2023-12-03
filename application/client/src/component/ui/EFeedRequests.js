@@ -5,7 +5,7 @@ import React from 'react'
 // * COMPONENT IMPORT
 import ElonMusk from './ElonMusk.png'
 
-// * CSS IMPORT 
+// * CSS IMPORT
 import EFeedRequestsCSS from './EFeedRequests.module.css'
 
 // TODO: populate right data from DB
