@@ -11,8 +11,8 @@ import JobDetails from './JobDetails'
 // * CSS IMPORT
 import FeedCSS from './Feed.module.css'
 
-// TODO: refines pop-up for job details
-// TODO: pop-up remove static data and populate with data from the database
+// TODO: refines job details pop-up style (buttons position)
+// TODO: populate the "when" field in the job details pop-up -- waiting on Jaime to make the fielkd in the DB
 
 function Feed ({ selectedCategory }) {
   const [jobTitles, setJobTitles] = useState([])
@@ -34,18 +34,22 @@ function Feed ({ selectedCategory }) {
       })
   }, [selectedCategory])
 
-  const openJobDetails = (job) => {
-    // For testing purposes, generate static data
-    const staticJobDetails = {
-      title: 'Software Engineer',
-      where: 'San Francisco, CA',
-      when: 'Full-time',
-      payment: 'Competitive salary',
-      description: 'Exciting opportunity for a skilled software engineer...',
-      photo: 'path/to/your/photo.jpg'
-    }
+  const openJobDetails = (jobTitle) => {
+    axios.get(`https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?title=${jobTitle}`)
+      .then(response => {
+        console.log('Response received:', response)
 
-    setSelectedJob(staticJobDetails)
+        if (response.data.length > 0) {
+          const jobDetails = response.data[0]
+          console.log('Job details fetched:', jobDetails)
+          setSelectedJob(jobDetails)
+        } else {
+          console.log('No job details found for this title.')
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching job details:', error)
+      })
   }
 
   const closeJobDetails = () => {
