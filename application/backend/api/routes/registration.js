@@ -1,15 +1,17 @@
 const { MongoClient } = require('mongodb')
 const express = require('express')
+const app = express()
 const router = express.Router()
+
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/demo'
 
 router.post('/', async (req, res) => {
     try {
-      const username = req.query.username
-      const password = req.query.password 
-      const email = req.query.email
-
+      const { username, password, email } = req.body
+  
       if (!username || !password || !email) {
         return res.status(400).json({ error: 'All fields (Username, Password, Email) are required' })
       }
@@ -39,7 +41,7 @@ router.post('/', async (req, res) => {
   
       client.close()
   
-      res.status(201).json({ message: 'User registered successfully', newUser })
+      res.status(201).json({ message: 'User registered successfully' })
   
     } catch (error) {
       console.error(error)
