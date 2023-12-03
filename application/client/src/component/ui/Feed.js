@@ -34,19 +34,20 @@ function Feed ({ selectedCategory }) {
       })
   }, [selectedCategory])
 
-  const openJobDetails = (job) => {
-    // For testing purposes, generate static data
-    const staticJobDetails = {
-      title: 'Software Engineer',
-      where: 'San Francisco, CA',
-      when: 'Full-time',
-      payment: 'Competitive salary',
-      description: 'Exciting opportunity for a skilled software engineer...',
-      photo: 'path/to/your/photo.jpg'
-    }
-
-    setSelectedJob(staticJobDetails)
+  const openJobDetails = (jobTitle) => {
+    axios.get(`https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?title=${jobTitle}`)
+      .then(response => {
+        // Assuming the API returns details for a single job based on the title
+        if (response.data.length > 0) {
+          const jobDetails = response.data[0]; // Considering it returns a single job
+          setSelectedJob(jobDetails);
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching job details:', error);
+      });
   }
+  
 
   const closeJobDetails = () => {
     setSelectedJob(null)
