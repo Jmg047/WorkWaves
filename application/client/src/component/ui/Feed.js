@@ -37,22 +37,20 @@ function Feed ({ selectedCategory }) {
   const openJobDetails = (jobTitle) => {
     axios.get(`https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?title=${jobTitle}`)
       .then(response => {
-        console.log('Response received:', response);
-  
+        console.log('Response received:', response)
+
         if (response.data.length > 0) {
-          const jobDetails = response.data[0];
-          console.log('Job details fetched:', jobDetails);
-          setSelectedJob(jobDetails);
+          const jobDetails = response.data[0]
+          console.log('Job details fetched:', jobDetails)
+          setSelectedJob(jobDetails)
         } else {
-          console.log('No job details found for this title.');
+          console.log('No job details found for this title.')
         }
       })
       .catch(error => {
-        console.error('Error fetching job details:', error);
-      });
+        console.error('Error fetching job details:', error)
+      })
   }
-  
-  
 
   const closeJobDetails = () => {
     setSelectedJob(null)
