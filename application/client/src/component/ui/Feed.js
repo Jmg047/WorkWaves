@@ -7,6 +7,7 @@ import axios from 'axios'
 // * COMPONENT IMPORT
 import bartenderJob from './bartenderJob.png'
 import JobDetails from './JobDetails'
+import SendJobRequest from './SendJobRequest'
 
 // * CSS IMPORT
 import FeedCSS from './Feed.module.css'
@@ -17,6 +18,7 @@ import FeedCSS from './Feed.module.css'
 function Feed ({ selectedCategory }) {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
+  const [showSendJobRequest, setShowSendJobRequest] = useState(false)
 
   useEffect(() => {
     let apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
@@ -56,6 +58,15 @@ function Feed ({ selectedCategory }) {
     setSelectedJob(null)
   }
 
+  const openSendJobRequest = () => {
+    console.log('Opening Send Job Request')
+    setShowSendJobRequest(true)
+  }
+
+  const closeSendJobRequest = () => {
+    console.log('Closing Send Job Request')
+    setShowSendJobRequest(false)
+  }
   return (
     <div className={FeedCSS.feed}>
       {jobTitles.map((job, index) => (
@@ -64,14 +75,25 @@ function Feed ({ selectedCategory }) {
             <img src={bartenderJob} alt='Job' width='350' height='170' />
             <div className={FeedCSS.JobTitle}>{job}</div>
             <div className={FeedCSS.jobButtonContainer}>
-              <button onClick={() => openJobDetails(job)} className={FeedCSS.JobButton}>Details</button>
-              <button href='/JobRequested' className={FeedCSS.JobButton}>Send job request</button>
+              <button
+                onClick={() => openJobDetails(job)}
+                className={FeedCSS.JobButton}>
+                Details
+                </button>
+              <button
+                onClick={openSendJobRequest}
+                className={FeedCSS.JobButton}>
+                Send job request
+              </button>
             </div>
           </div>
         </div>
       ))}
       {selectedJob && (
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
+      )}
+      {showSendJobRequest && selectedJob && (
+        <SendJobRequest jobDetails={selectedJob} onClose={closeSendJobRequest} />
       )}
     </div>
   )
