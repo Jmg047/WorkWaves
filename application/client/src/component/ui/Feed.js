@@ -14,11 +14,13 @@ import FeedCSS from './Feed.module.css'
 
 // TODO: refines job details pop-up style (buttons position)
 // TODO: populate the "when" field in the job details pop-up -- waiting on Jaime to make the fielkd in the DB
+ 
 
 function Feed ({ selectedCategory }) {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
   const [showSendJobRequest, setShowSendJobRequest] = useState(false)
+  const [selectedJobTitle, setSelectedJobTitle] = useState(null)
 
   useEffect(() => {
     let apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
@@ -58,9 +60,10 @@ function Feed ({ selectedCategory }) {
     setSelectedJob(null)
   }
 
-  const openSendJobRequest = () => {
+  const openSendJobRequest = (jobTitle) => {
     console.log('Opening Send Job Request')
     setShowSendJobRequest(true)
+    setSelectedJobTitle(jobTitle)
   }
 
   const closeSendJobRequest = () => {
@@ -69,7 +72,6 @@ function Feed ({ selectedCategory }) {
   }
 
   console.log('showSendJobRequest:', showSendJobRequest)
-  
   return (
     <div className={FeedCSS.feed}>
       {jobTitles.map((job, index) => (
@@ -84,7 +86,7 @@ function Feed ({ selectedCategory }) {
                 Details
                 </button>
               <button
-                onClick={openSendJobRequest}
+                onClick={() => openSendJobRequest(job)}  
                 className={FeedCSS.JobButton}>
                 Send job request
               </button>
@@ -96,7 +98,7 @@ function Feed ({ selectedCategory }) {
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
       )}
       {showSendJobRequest && (
-        <SendJobRequest onClose={closeSendJobRequest} />
+      <SendJobRequest onClose={closeSendJobRequest} jobTitle={selectedJobTitle} />
       )}
     </div>
   )

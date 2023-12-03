@@ -1,13 +1,13 @@
 import React from 'react'
 import SendJobRequestCSS from './SendJobRequest.module.css'
 
-function SendJobRequest ({ onClose }) {
+function SendJobRequest ({ jobTitle, onClose }) {
   return (
     <div className={SendJobRequestCSS.popup}>
       <div className={SendJobRequestCSS.popupContent}>
       <h2>Send a request for</h2>
 
-      <h2 className={SendJobRequestCSS.title}><strong>Title: </strong></h2>
+      <h2 className={SendJobRequestCSS.title}><strong>Title: </strong> {jobTitle}</h2>
 
       <p>The owner of this job post will receive your profile info whether they
         accept or not your request. make sure you info are up to date.
