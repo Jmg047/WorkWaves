@@ -27,9 +27,9 @@ const LoginForm = () => {
     try {
       console.log('Sending login request...')
       const response = await Axios.post('https://workwaves-jm2b5.ondigitalocean.app/api/login', {
-          username: username,
-          password: password
-        })
+        username: username,
+        password: password
+      })
 
       if (response.status === 200) {
         console.log('Login successful')
