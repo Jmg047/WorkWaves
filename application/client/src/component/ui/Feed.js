@@ -67,6 +67,9 @@ function Feed ({ selectedCategory }) {
     console.log('Closing Send Job Request')
     setShowSendJobRequest(false)
   }
+
+  console.log('showSendJobRequest:', showSendJobRequest)
+  
   return (
     <div className={FeedCSS.feed}>
       {jobTitles.map((job, index) => (
@@ -89,11 +92,11 @@ function Feed ({ selectedCategory }) {
           </div>
         </div>
       ))}
-      {selectedJob && (
+      {selectedJob && !showSendJobRequest && (
         <JobDetails jobDetails={selectedJob} onClose={closeJobDetails} />
       )}
-      {showSendJobRequest && selectedJob && (
-        <SendJobRequest jobDetails={selectedJob} onClose={closeSendJobRequest} />
+      {showSendJobRequest && (
+        <SendJobRequest onClose={closeSendJobRequest} />
       )}
     </div>
   )
