@@ -2,6 +2,9 @@ import React from 'react'
 import SendJobRequestCSS from './SendJobRequest.module.css'
 
 // TODO: refines send job request pop-up style
+// ! SendJobRequest.module.css is breaking JobDetails pop up style
+// ! Have not clue why? Using module should differentiate them normally? 
+
 function SendJobRequest ({ jobTitle, onClose }) {
   return (
     <div className={SendJobRequestCSS.popup}>
