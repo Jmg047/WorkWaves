@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-// import JobRequest from './JobRequest'
 
 // * LIBRARY IMPORT
 import axios from 'axios'
