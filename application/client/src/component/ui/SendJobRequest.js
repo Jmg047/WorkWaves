@@ -1,7 +1,7 @@
 import React from 'react'
 import SendJobRequestCSS from './SendJobRequest.module.css'
 
-//TODO: refines send job request pop-up style
+// TODO: refines send job request pop-up style
 function SendJobRequest ({ jobTitle, onClose }) {
   return (
     <div className={SendJobRequestCSS.popup}>
@@ -10,12 +10,11 @@ function SendJobRequest ({ jobTitle, onClose }) {
 
       <h2 className={SendJobRequestCSS.title}><strong>Title: </strong> {jobTitle}</h2>
 
-      <div className={SendJobRequestCSS.infos}> 
+      <div className={SendJobRequestCSS.infos}>
         <p>The owner of this job post will receive your profile info whether they
            accept or not your request. Make sure you info are up to date.
         </p>
       </div>
-     
 
           <button
           className={SendJobRequestCSS.closeButton}>

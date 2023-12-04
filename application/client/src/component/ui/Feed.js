@@ -14,7 +14,6 @@ import FeedCSS from './Feed.module.css'
 
 // TODO: refines job details pop-up style (buttons position)
 // TODO: populate the "when" field in the job details pop-up -- waiting on Jaime to make the fielkd in the DB
- 
 
 function Feed ({ selectedCategory }) {
   const [jobTitles, setJobTitles] = useState([])
@@ -86,7 +85,7 @@ function Feed ({ selectedCategory }) {
                 Details
                 </button>
               <button
-                onClick={() => openSendJobRequest(job)}  
+                onClick={() => openSendJobRequest(job)}
                 className={FeedCSS.JobButton}>
                 Send job request
               </button>
