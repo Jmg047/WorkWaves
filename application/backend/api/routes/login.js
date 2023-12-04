@@ -12,8 +12,7 @@ router.post('/', async (req, res) => {
       const db = client.db('demo')
       const collection = db.collection('demo')
   
-      const username = req.query.username
-      const password = req.query.password
+      const { username, password } = req.body
   
       if (!username || !password) {
         return res.status(400).json({ error: 'All fields (Username, Password) are required' })
