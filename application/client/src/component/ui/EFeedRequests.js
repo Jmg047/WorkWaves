@@ -12,6 +12,8 @@ import EFeedRequestsCSS from './EFeedRequests.module.css'
 // TODO: pop up button details here (Banting)
 // TODO: make accept and decline buttons works
 
+// testsc s
+
 function EFeedRequests () {
   return (
       <div>

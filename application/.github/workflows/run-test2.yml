@@ -10,26 +10,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [19.8.1]
-
     steps:
       - uses: actions/checkout@v2 # bring the code from the repo to the container (current working directory)
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 16.x
         uses: actions/setup-node@v1 # setup node
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16.x
 
       - name: Install dependencies
         run: yarn
 
-      - name: Run tests
-        run: yarn test ./application # run the tests
-
       - name: Build the project
-        run: yarn build # build the project
+        run: yarn build
 
+      - name: Start the server
+        run: yarn start
 
-        # use act: https://github.com/nektos/act to test locally (optimal and optional)
+      - name: Run tests
+        run: yarn test # run the tests
+
