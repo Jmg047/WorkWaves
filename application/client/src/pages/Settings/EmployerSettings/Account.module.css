@@ -1,0 +1,16 @@
+.Container {
+    display: flex;
+  }
+  
+  .itemOne {
+    flex: 0 0 auto; /* Sidebar won't grow or shrink */
+  }
+  
+  .itemTwo {
+    flex: 1; /* Feed will take available space */
+  }
+  
+  .itemThree {
+    flex: 0 0 auto; /* Additional space if needed */
+  }
+  

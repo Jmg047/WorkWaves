@@ -1,7 +1,6 @@
 .SideBar {
     width: 250px;
     border-radius: 10px;
-
     background-color: rgb(35, 38, 39);
  }
  
@@ -35,7 +34,7 @@
    box-sizing: border-box;
    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
    transition: all .5s;
-   background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+   background-image: linear-gradient(92.88deg, #003B8A 9.16%, #003B8A 43.89%, #003B8A 64.72%);
    cursor: pointer; 
    margin: 0 5px; 
 }
