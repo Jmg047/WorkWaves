@@ -1,57 +1,54 @@
+// AccountFeed.js
 import React, { useState } from 'react';
-import './AccountFeed.module.css';
+import AccountFeedCSS from './AccountFeed.module.css';
 
 const AccountFeed = () => {
   const [userInfo] = useState({
     userId: 12345,
     name: 'John Doe',
     email: 'john.doe@example.com',
-    password: 'password123'
+    password: 'password123',
   });
 
   return (
-    <div className='account-form-container'>
-      <h1>Account</h1>
-
-      <div className='user-id-section'>
-        <p>
-          <strong>User ID:</strong> {userInfo.userId}
-        </p>
+    <div className={AccountFeedCSS.accountFeedContainer}>
+      <div className={AccountFeedCSS.accountFormContainer}>
+        <h1>Account</h1>
+        <UserInfoSection userId={userInfo.userId} />
+        <AccountForm userInfo={userInfo} />
       </div>
-
-      <form className='account-form'>
-        <div className='form-group'>
-          <label htmlFor='name'>Name:</label>
-          <input
-            type='text'
-            name='name'
-            value={userInfo.name}
-            readOnly
-          />
-        </div>
-
-        <div className='form-group'>
-          <label htmlFor='email'>Email:</label>
-          <input
-            type='email'
-            name='email'
-            value={userInfo.email}
-            readOnly
-          />
-        </div>
-
-        <div className='form-group'>
-          <label htmlFor='password'>Password:</label>
-          <input
-            type='password'
-            name='password'
-            value={userInfo.password}
-            readOnly
-          />
-        </div>
-      </form>
     </div>
   );
-}
+};
+
+const UserInfoSection = ({ userId }) => (
+  <div className={AccountFeedCSS.userIdSection}>
+    <p>
+      <strong>User ID:</strong> {userId}
+    </p>
+  </div>
+);
+
+const AccountForm = ({ userInfo }) => (
+  <div className={AccountFeedCSS.accountFormBox}>
+    <form className={AccountFeedCSS.accountForm}>
+      <FormField label="Name" value={userInfo.name} readOnly />
+      <FormField label="Email" value={userInfo.email} readOnly />
+      <FormField label="Password" value="*********" readOnly />
+    </form>
+  </div>
+);
+
+const FormField = ({ label, value, readOnly }) => (
+  <div className={AccountFeedCSS.formGroup}>
+    <label htmlFor={label.toLowerCase()}>{label}:</label>
+    <input
+      type={label.toLowerCase() === 'password' ? 'password' : 'text'}
+      name={label.toLowerCase()}
+      value={value}
+      readOnly={readOnly}
+    />
+  </div>
+);
 
 export default AccountFeed;

@@ -1,43 +1,65 @@
-.account-form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
-  margin-right: 50px; /* Add right margin for spacing */
-  margin-left: 500px;  /* Add left margin for spacing */
-}
+/* AccountFeed.module.css */
 
-.user-id-section {
-  margin-bottom: 20px;
-}
-
-.account-form {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input {
-  padding: 8px;
-  font-size: 16px;
-}
-
-h1 {
-  text-align: center;
-  color: #333;
-}
+.accountFeedContainer {
+    display: flex;
+    padding: 30px; /* Add padding for spacing */
+    justify-content: center;
+  }
+  
+  .accountFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Adjust the max-width to make it bigger */
+    max-height: 800px;
+    background-color: #fafafa;
+  }
+  
+  .userIdSection {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .accountFormBox {
+    width: 100%;
+    max-width: 800px; /* Adjust the max-width of the form box if needed */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .accountForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+    text-align: center; /* Center the container around the labels */
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
