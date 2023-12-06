@@ -13,6 +13,8 @@ const login = require('./routes/login')
 const registration = require('./routes/registration')
 const workers = require('./routes/workers')
 const upload = require('./routes/upload.js')
+const createReq = require('./routes/create-request.js')
+const sendReq = require('./routes/send-request.js')
 
 app.use(cors())
 
@@ -37,6 +39,10 @@ app.use('/registration', registration)
 app.use('/login', login)
 
 app.use('/upload', upload)
+
+app.use('/create-request', createReq)
+
+app.use('/send-request', sendReq)
 
 app.listen(port, () => {
   console.log(`API server is running on port ${port}`)
