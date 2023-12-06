@@ -9,6 +9,7 @@ import SignUpForm from './pages/SignUp/SignUpForm.js'
 import LoginForm from './pages/Login/LoginForm.js'
 import EJobs from './pages/Settings/EmployerSettings/EJobs'
 import ERequests from './pages/Settings/EmployerSettings/ERequests'
+import Account from './pages/Settings/EmployerSettings/Account'
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path='/signup' element={<SignUpForm />} />
           <Route path='/employer-settings-jobs' element={<EJobs />} />
           <Route path='/employer-settings-requests' element={<ERequests />} />
+          <Route path='/employer-settings-account' element={<Account />} />
         </Routes>
       </div>
     </div>

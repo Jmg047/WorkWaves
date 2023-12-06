@@ -1,42 +1,32 @@
-import React from 'react'
-import SendJobRequestCSS from './SendJobRequest.module.css'
+import React from 'react';
+import SendJobRequestCSS from './SendJobRequest.module.css';
 
-// TODO: refines send job request pop-up style
-// ! SendJobRequest.module.css is breaking JobDetails pop up style
-// ! Have not clue why? Using module should differentiate them normally? 
-
-function SendJobRequest ({ jobTitle, onClose }) {
+function SendJobRequest({ jobTitle, onClose }) {
   return (
-    <div className={SendJobRequestCSS.popup}>
-      <div className={SendJobRequestCSS.popupContent}>
-      <h1>Send a request for</h1>
+    <div className={SendJobRequestCSS.popupSendJobRequest}>
+      <div className={SendJobRequestCSS.popupContentSendJobRequest}>
+        <h1 className={SendJobRequestCSS.sendJobRequest}>Send a request for</h1>
 
-      <h2 className={SendJobRequestCSS.title}><strong>Title: </strong> {jobTitle}</h2>
+        <h2 className={SendJobRequestCSS.titleSendJobRequest}><strong>Title: </strong>{jobTitle}</h2>
 
-      <div className={SendJobRequestCSS.infos}>
-        <p>The owner of this job post will receive your profile info whether they
-           accept or not your request. Make sure you info are up to date.
-        </p>
-      </div>
+        <div className={SendJobRequestCSS.infosSendJobRequest}>
+          <p className={SendJobRequestCSS.sendJobRequest}>
+            The owner of this job post will receive your profile info whether they accept or not your request.
+            Make sure your info is up to date.
+          </p>
+        </div>
 
-          <button
-          className={SendJobRequestCSS.closeButton}>
-          Check my profile
-          </button>
+        <div className={SendJobRequestCSS.buttonContainerSendJobRequest}>
+          <button className={SendJobRequestCSS.sendJobRequest}>Check my profile</button>
+          <button className={SendJobRequestCSS.sendJobRequest}>Send a request</button>
+        </div>
 
-          <button
-          className={SendJobRequestCSS.closeButton}>
-          Send a request
-          </button>
-
-        <button
-          onClick={onClose}
-          className={SendJobRequestCSS.closeButton}>
+        <button onClick={onClose} className={SendJobRequestCSS.closeButtonSendJobRequest}>
           Close
-          </button>
+        </button>
       </div>
     </div>
-  )
+  );
 }
 
-export default SendJobRequest
+export default SendJobRequest;
