@@ -15,8 +15,8 @@ body {
     width: 100%; /* 100% of the parent (.App) element's width */
     min-height: 100vh; /* 50% of the parent (.App) element's height */
     padding: 5px;
-    border: 5px solid black;
-    background-color: rgb(107, 42, 168);
+    border: 5px solid white;
+    background-color: #004aad;
 }
 
 
