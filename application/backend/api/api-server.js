@@ -13,6 +13,7 @@ const login = require('./routes/login')
 const registration = require('./routes/registration')
 const workers = require('./routes/workers')
 const upload = require('./routes/upload.js')
+const editUser = require('./routes/edit-user.js')
 const createReq = require('./routes/create-request.js')
 const sendReq = require('./routes/send-request.js')
 
@@ -29,6 +30,8 @@ app.use('/gigs', gigs)
 app.use('/get-gigs', getGigs)
 
 app.use('/create-gig', createGig)
+
+app.use('/edit-user', editUser)
 
 app.use('/delete-gig', deleteGig)
 
