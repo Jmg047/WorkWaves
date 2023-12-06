@@ -10,6 +10,7 @@ import LoginForm from './pages/Login/LoginForm.js'
 import EJobs from './pages/Settings/EmployerSettings/EJobs'
 import ERequests from './pages/Settings/EmployerSettings/ERequests'
 import Account from './pages/Settings/EmployerSettings/Account'
+import AccountInfo from './component/ui/AccountInfo'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/employer-settings-jobs' element={<EJobs />} />
           <Route path='/employer-settings-requests' element={<ERequests />} />
           <Route path='/employer-settings-account' element={<Account />} />
+          <Route path='/employer-settings-accountInfo' element={<AccountInfo />} />
         </Routes>
       </div>
     </div>

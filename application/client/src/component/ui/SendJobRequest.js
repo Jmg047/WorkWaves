@@ -1,7 +1,7 @@
-import React from 'react';
-import SendJobRequestCSS from './SendJobRequest.module.css';
+import React from 'react'
+import SendJobRequestCSS from './SendJobRequest.module.css'
 
-function SendJobRequest({ jobTitle, onClose }) {
+function SendJobRequest ({ jobTitle, onClose }) {
   return (
     <div className={SendJobRequestCSS.popupSendJobRequest}>
       <div className={SendJobRequestCSS.popupContentSendJobRequest}>
@@ -26,7 +26,7 @@ function SendJobRequest({ jobTitle, onClose }) {
         </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default SendJobRequest;
+export default SendJobRequest

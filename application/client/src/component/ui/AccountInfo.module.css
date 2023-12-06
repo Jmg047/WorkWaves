@@ -1,0 +1,58 @@
+/* AccountInfo.module.css */
+
+.custom-account-settings {
+    width: 50%;
+    max-width: 400px; /* Set your desired max-width */
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .user-id-section {
+    margin-bottom: 15px;
+  }
+  
+  .custom-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: auto; /* Let the content determine the width */
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: auto; /* Let the content determine the width */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .custom-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+  }
+  
+  .custom-button:hover {
+    background: #0056b3;
+  }
+  
