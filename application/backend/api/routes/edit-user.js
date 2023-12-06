@@ -1,4 +1,4 @@
-const { MongoClient} = require('mongodb');
+const { MongoClient } = require('mongodb');
 const express = require('express');
 const router = express.Router();
 
@@ -6,14 +6,13 @@ router.use(express.json());
 
 const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/demo';
 
-router.patch('/:username', async (req, res) => {
+router.patch('/', async (req, res) => {
   try {
-    // Extracting username from the URL parameter
-    const { username } = req.params; 
-    const { newUsername, email, password } = req.body;
+    // Extracting parameters from the query parameters
+    const { username, newUsername, email, password, firstName, lastName, phoneNumber } = req.query;
 
-    if (!newUsername && !email && !password) {
-      return res.status(400).json({ error: 'At least one field (New Username, Email, Password) is required to update' });
+    if (!username || !newUsername) {
+      return res.status(400).json({ error: 'Both username and newUsername are required in the query parameters.' });
     }
 
     const client = new MongoClient(mongoURI);
@@ -23,20 +22,23 @@ router.patch('/:username', async (req, res) => {
     const collection = db.collection('demo');
 
     let updateFields = {};
-    if (newUsername) updateFields.Username = newUsername;
-    if (email) updateFields.Email = email;
-    if (password) updateFields.Password = password;
-
+    if (newUsername) updateFields.$set = { Username: newUsername };
+    if (email) updateFields.$set = { ...updateFields.$set, Email: email };
+    if (password) updateFields.$set = { ...updateFields.$set, Password: password };
+    if (firstName) updateFields.$set = { ...updateFields.$set, FirstName: firstName };
+    if (lastName) updateFields.$set = { ...updateFields.$set, LastName: lastName };
+    if (phoneNumber) updateFields.$set = { ...updateFields.$set, PhoneNumber: phoneNumber };
+    
     // Update the user based on the existing username
     const updatedUser = await collection.findOneAndUpdate(
       { Username: username },
-      { $set: updateFields },
+      updateFields,
       { returnDocument: 'after' }
     );
     console.log("Update result:", updatedUser);
     client.close();
 
-    if (!updatedUser.value) {
+    if (updatedUser.value) {
       return res.status(404).json({ error: 'User not found' });
     }
 
