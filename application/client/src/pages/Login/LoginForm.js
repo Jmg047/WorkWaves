@@ -26,7 +26,7 @@ const LoginForm = () => {
 
     try {
       console.log('Sending login request...')
-      const response = await Axios.post('https://workwaves-jm2b5.ondigitalocean.app/api/login', {
+      const response = await Axios.post(process.env.BASE_URL + '/login', {
         username: username,
         password: password
       })

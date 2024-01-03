@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb')
 const express = require('express')
 const router = express.Router()
 
-const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/demo'
+const mongoURI = DB_CONNECTION_STRING + '/demo'
 
 router.get('/', async (req, res) => {
   try {

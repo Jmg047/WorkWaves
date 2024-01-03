@@ -17,7 +17,7 @@ function EFeedJobsRequested () {
   const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
+    const apiUrl = process.env.BASE_URL + '/get-gigs'
 
     axios.get(apiUrl)
       .then(response => {
