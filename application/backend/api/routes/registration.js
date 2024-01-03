@@ -6,7 +6,7 @@ const router = express.Router()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-const mongoURI = DB_CONNECTION_STRING + '/demo'
+const mongoURI = process.env.DB_CONNECTION_STRING + '/demo'
 
 router.post('/', async (req, res) => {
     try {

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { MongoClient } = require('mongodb');
 
-const mongoURI = DB_CONNECTION_STRING + '/demo';
+const mongoURI = process.env.DB_CONNECTION_STRING + '/demo';
 
 router.get('/', async (req, res) => {
   try {

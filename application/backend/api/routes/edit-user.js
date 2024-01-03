@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.use(express.json());
 
-const mongoURI = DB_CONNECTION_STRING + '/demo';
+const mongoURI = process.env.DB_CONNECTION_STRING + '/demo';
 
 router.patch('/', async (req, res) => {
   try {
