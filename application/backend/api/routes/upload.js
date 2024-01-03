@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const path = require('path')
 const router = express.Router()
 
-const mongoURI = DB_CONNECTION_STRING + '/gigs'
+const mongoURI = process.env.DB_CONNECTION_STRING + '/gigs'
 
 mongoose.connect(mongoURI).then(() => console.log('MongoDB connected'))
   .catch(err => console.error(err))

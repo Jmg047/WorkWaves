@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 
-const mongoURI = DB_CONNECTION_STRING + '/gigs'
+const mongoURI = process.env.DB_CONNECTION_STRING + '/gigs'
 
 router.post('/', upload.single('image'), async (req, res) => {
   try {
