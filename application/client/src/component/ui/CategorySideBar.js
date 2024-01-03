@@ -11,7 +11,7 @@ function CategorySideBar ({ updateCategory }) {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    const apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
+    const apiUrl = process.env.BASE_URL + '/get-gigs'
 
     axios
       .get(apiUrl)

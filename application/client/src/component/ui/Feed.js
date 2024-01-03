@@ -19,10 +19,10 @@ function Feed ({ selectedCategory }) {
   const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    let apiUrl = 'https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs'
+    let apiUrl = process.env.BASE_URL + '/get-gigs'
 
     if (selectedCategory) {
-      apiUrl = `https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?category=${selectedCategory}`
+      apiUrl = process.env.BASE_URL + `/get-gigs?category=${selectedCategory}`
     }
     axios.get(apiUrl)
       .then(response => {
@@ -35,7 +35,7 @@ function Feed ({ selectedCategory }) {
   }, [selectedCategory])
 
   const openJobDetails = (jobTitle) => {
-    axios.get(`https://workwaves-jm2b5.ondigitalocean.app/api/get-gigs?title=${jobTitle}`)
+    axios.get(process.env.BASE_URL + `/get-gigs?title=${jobTitle}`)
       .then(response => {
         console.log('Response received:', response)
 
