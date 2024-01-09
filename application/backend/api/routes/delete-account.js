@@ -4,7 +4,7 @@ const router = express.Router()
 const ImageModel = require('./image.model')
 const axios = require('axios')
 
-const mongoURI = 'mongodb+srv://client_00:T5StQOdhg2QjJ4KV@cluster0.hhxszoa.mongodb.net/demo'
+const mongoURI = process.env.DB_CONNECTION_STRING + '/demo'
 
 router.delete('/', async (req, res) => {
     try {
