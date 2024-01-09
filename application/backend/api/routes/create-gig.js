@@ -1,6 +1,5 @@
-const express = require('express')
-const multer = require('multer')
 const { MongoClient } = require('mongodb')
+const express = require('express')
 const router = express.Router()
 const path = require('path')
 
@@ -37,28 +36,13 @@ router.post('/', upload.single('image'), async (req, res) => {
     const existingGig = await collection.findOne({ title: title })
     if (existingGig) {
       client.close()
-      return res.status(400).json({ error: 'Duplicate entry already exists' })
+  
+      res.status(201).json({ message: 'Gig created successfully', newGig })
+  
+    } catch (error) {
+      console.error(error)
+      res.status(500).json({ error: 'Error creating gigs' })
     }
-
-    const newGig = {
-      title: title,
-      description: description,
-      location: location,
-      payment: payment,
-      category: category,
-      image: req.file ? req.file.originalname : null 
-    }
-
-    const result = await collection.insertOne(newGig)
-    client.close()
-    
-    res.status(201).json({ message: 'Gig created successfully', newGig })
-
-  } catch (error) {
-    
-    console.error(error)
-    res.status(500).json({ error: 'Error creating gigs' })
-  }
-})
+  })
 
 module.exports = router
