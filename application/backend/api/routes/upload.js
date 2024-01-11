@@ -7,8 +7,7 @@ const router = express.Router()
 
 const mongoURI = process.env.DB_CONNECTION_STRING + '/gigs'
 
-mongoose.connect(mongoURI).then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err))
+mongoose.connect(mongoURI).catch(err => console.error(err))
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

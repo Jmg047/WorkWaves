@@ -17,7 +17,7 @@ function EFeedJobsRequested () {
   const [selectedJob, setSelectedJob] = useState(null)
 
   useEffect(() => {
-    const apiUrl = process.env.BASE_URL + '/get-gigs'
+    const apiUrl = process.env.BASE_URL + '/get-gigs' || 'http://localhost:2000/get-gigs'
 
     axios.get(apiUrl)
       .then(response => {
