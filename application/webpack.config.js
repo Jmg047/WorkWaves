@@ -1,6 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const webpack = require('webpack')
+const dotenv = require('dotenv').config( {
+  path: path.join(__dirname, '.env')
+} );
 
 module.exports = {
   entry: path.join(__dirname, 'client', 'src', 'index.js'),
@@ -46,5 +50,8 @@ module.exports = {
       inject: 'body',
     }),
     new ESLintPlugin(),
+    new webpack.DefinePlugin( {
+      "process.env": JSON.stringify(dotenv.parsed)
+    } ),
   ],
 };

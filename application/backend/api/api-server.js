@@ -1,7 +1,12 @@
+const path = require('path')
 const cors = require('cors')
 const express = require('express')
 const app = express()
 const port = 2000
+const dotenv = require('dotenv')
+dotenv.config( {
+  path: '.env'
+} )
 
 const createGig = require('./routes/create-gig')
 const deleteAccount = require('./routes/delete-account.js')
@@ -18,7 +23,6 @@ const createReq = require('./routes/create-request.js')
 const sendReq = require('./routes/send-request.js')
 
 app.use(cors())
-
 app.use(express.json())
 
 app.use('/workers', workers)

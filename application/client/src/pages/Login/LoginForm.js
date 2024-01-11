@@ -10,8 +10,9 @@ const LoginForm = () => {
   const [password, setPwd] = useState('')
   const [errMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false)
-
   const [loggedInUser, setLoggedInUser] = useState('')
+
+  const URL = process.env.BASE_URL || 'http://localhost:2000'
 
   useEffect(() => {
     userRef.current.focus()
@@ -26,7 +27,7 @@ const LoginForm = () => {
 
     try {
       console.log('Sending login request...')
-      const response = await Axios.post('https://workwaves-jm2b5.ondigitalocean.app/api/login', {
+      const response = await Axios.post(URL + '/login', {
         username: username,
         password: password
       })
