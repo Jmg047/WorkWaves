@@ -11,7 +11,7 @@ function CategorySideBar ({ updateCategory }) {
   const [categories, setCategories] = useState([])
 
   useEffect(() => {
-    const apiUrl = process.env.BASE_URL + '/get-gigs'
+    const apiUrl = process.env.BASE_URL + '/get-gigs' || 'http://localhost:2000/get-gigs'
 
     axios
       .get(apiUrl)

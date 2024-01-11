@@ -17,12 +17,13 @@ import FeedCSS from './Feed.module.css'
 function Feed ({ selectedCategory }) {
   const [jobTitles, setJobTitles] = useState([])
   const [selectedJob, setSelectedJob] = useState(null)
+  const URL = process.env.BASE_URL || 'http://localhost:2000'
 
   useEffect(() => {
-    let apiUrl = process.env.BASE_URL + '/get-gigs'
+    let apiUrl = URL + '/get-gigs'
 
     if (selectedCategory) {
-      apiUrl = process.env.BASE_URL + `/get-gigs?category=${selectedCategory}`
+      apiUrl = URL + `/get-gigs?category=${selectedCategory}`
     }
     axios.get(apiUrl)
       .then(response => {
@@ -35,7 +36,7 @@ function Feed ({ selectedCategory }) {
   }, [selectedCategory])
 
   const openJobDetails = (jobTitle) => {
-    axios.get(process.env.BASE_URL + `/get-gigs?title=${jobTitle}`)
+    axios.get(URL + `/get-gigs?title=${jobTitle}`)
       .then(response => {
         console.log('Response received:', response)
 

@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react'
 const GigList = ({ query }) => {
   const [data, setData] = useState([])
   const [dataType, setDataType] = useState('gigs') // Default to gigs
+  
+  const URL = process.env.BASE_URL || 'http://localhost:2000'
 
   useEffect(() => {
-    // Determine the data type and fetch data accordingly
-    const apiUrl = dataType === 'gigs' ? process.env.BASE_URL + '/get-gigs/' : process.env.BASE_URL + '/get-workers/'
+
+    const apiUrl = dataType === 'gigs' ? URL + '/get-gigs/' : URL + '/get-workers/'
 
     const requestOptions = {
       method: 'GET',
@@ -25,7 +27,6 @@ const GigList = ({ query }) => {
   }, [query, dataType])
 
   useEffect(() => {
-    // Update the data type when the query changes
     if (query === 'worker') {
       setDataType('workers')
     } else {
