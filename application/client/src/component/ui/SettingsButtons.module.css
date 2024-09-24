@@ -1,6 +1,5 @@
 .Container {
     width: 250px;
-   
 }
 
 .Title {
@@ -9,21 +8,21 @@
     background-color: #3498db;
 }
 .ButtonsContainer {
-    display: flex; /* Make the container a flex container */
+    display: flex;
    justify-content: center;
    
-    background-color: #f0f0f0; /* Set a background color */
-    padding: 10px; /* Add some padding to the container */
-    border: 1px solid #999; /* Add a border for better visibility */
-    border-radius: 5px; /* Add rounded corners to the container */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
   }
 
 .ButtonsContainer > div {
-    padding: 5px 10px; /* Add padding to each button */
-    background-color: #3498db; /* Set a background color for the buttons */
-    color: #fff; /* Set text color to white */
-    border: none; /* Remove the button border */
-    border-radius: 3px; /* Add rounded corners to the buttons */
-    cursor: pointer; /* Add a pointer cursor on hover for the buttons */
-    margin: 0 5px; /* Add some spacing between the buttons */
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px;
 }

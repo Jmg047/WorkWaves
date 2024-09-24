@@ -17,9 +17,9 @@
     justify-content: flex-start;
 
     width: 100%;
-    max-width: 600px; /* Increase the max-width */
+    max-width: 600px;
     min-height: 400px;
-    padding: 2rem; /* Increase the padding for more space inside the form */
+    padding: 2rem;
     border-radius: 10px;
 
     background-color: #222527;
@@ -42,18 +42,18 @@ input[type="text"],
 input[type="password"],
 button {
   font-family: 'Nunito', sans-serif;
-  font-size: 24px; /* Increase the font size */
-  padding: 0.5rem; /* Adjust the padding for a larger input area */
+  font-size: 24px;
+  padding: 0.5rem;
   border-radius: 0.5rem;
 }
 
 label,
 button {
-    margin-top: 1.5rem; /* Increase the margin for better spacing */
+    margin-top: 1.5rem;
 }
   
 button {
-    padding: 0.75rem; /* Adjust the button padding */
+    padding: 0.75rem;
 }
   
 

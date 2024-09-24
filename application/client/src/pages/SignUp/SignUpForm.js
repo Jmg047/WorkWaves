@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 import Axios from 'axios'
 import './SignUpForm.css'
 
-// const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/
-// const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
-// const EMAIL_REGEX = /\S+@\S+\.\S+/
-
 const SignUpForm = () => {
   const userRef = useRef()
   const [user, setUser] = useState('')
@@ -28,13 +24,6 @@ const SignUpForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // check if the username, password, and email are valid
-    // const v1 = USER_REGEX.test(user)
-    // const v2 = PWD_REGEX.test(pwd)
-    // if (!v1 || !v2) {
-    //  setErrMsg('Invalid entry')
-    //  return
-    // }
 
     try {
       console.log('Sending registration request...')

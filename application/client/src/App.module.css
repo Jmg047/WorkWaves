@@ -7,13 +7,12 @@ body {
 
 .App {
     width: 100vw;
-    min-height: 100vh; /* Ensure the minimum height of the element is the viewport height */
-    /* background-color: red; */
+    min-height: 100vh;
 }
 
 .container {
-    width: 100%; /* 100% of the parent (.App) element's width */
-    min-height: 100vh; /* 50% of the parent (.App) element's height */
+    width: 100%;
+    min-height: 100vh;
     padding: 5px;
     border: 5px solid white;
     background-color: #004aad;

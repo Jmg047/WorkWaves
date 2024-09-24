@@ -4,7 +4,6 @@
   justify-content: space-between; 
   width: 1150px;
   padding-left: 800px;
-  /* background-color: orange; */
   padding: 10px; 
   overflow: auto;
 }
@@ -13,12 +12,10 @@
   display: flex;
   justify-content: center;
   
-  width: calc(50.4% - 20px); /* Calculate 50% of the container width with spacing */
-  height: auto; /* Remove fixed height to allow posts to adjust their height based on content */
-  margin-bottom: 20px; /* Add margin to create space around and between posts */
-  padding: 10px; /* Add padding to create space inside each post */
- 
-  /* background-color: green; */
+  width: calc(50.4% - 20px);
+  height: auto;
+  margin-bottom: 20px;
+  padding: 10px;
 }
 
 .item {
@@ -39,7 +36,6 @@
 
   height: 30px;
   margin-top: 10px;
-  /* background-color: aqua; */
 }
 
 .jobButtonContainer {
@@ -50,7 +46,6 @@
 
   height: 25%;
   margin-top: 10px;
-  /* background-color: red; */
 }
 
 .JobButton {
