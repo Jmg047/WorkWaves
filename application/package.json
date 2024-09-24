@@ -1,5 +1,5 @@
 {
-  "name": "workwaves-team03",
+  "name": "workwaves",
   "version": "1.0.0",
   "description": "CSC648 group project",
   "main": "./server/server.js",
@@ -11,7 +11,7 @@
     "start": "concurrently \"node backend/server/server.js\" \"node backend/api/api-server.js\""
   },
   "repository": "git+https://github.com/Jmg047/CSC648-WorkWaves-team03.git",
-  "author": "Jmg047 <90755835+Jmg047@users.noreply.github.com>",
+  "author": "Team 3 - SFSU CSC648 Fall 2023",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Jmg047/CSC648-WorkWaves-team03/issues"
