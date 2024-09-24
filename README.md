@@ -26,4 +26,4 @@ and then visit: http://localhost:3000
 - `yarn`: 1.22.19
 - `mongodb`: 6.2.0
 - `multer`: 1.4.5-lts.1
-- `webpack-cli`: 5.98.0
+- `webpack`: 5.98.0
