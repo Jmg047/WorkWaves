@@ -8,7 +8,7 @@ const config = {
   baseUrl: '/'
 }
 
-const baseDir = path.dirname(path.dirname(__dirname)) // Removes two levels of the path
+const baseDir = path.dirname(path.dirname(__dirname))
 
 // Serve static assets
 app.use('/dist', express.static(path.join(baseDir, 'static/dist')))
